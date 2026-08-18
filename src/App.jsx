@@ -2,6 +2,7 @@ import './App.css'
 import Navbar from './layouts/Navbar';
 import HeroSection from './layouts/HeroSection';
 import FeatureSection from './layouts/FeatureSection';
+import Footer from './layouts/Footer';
 
 function App() {
   return (
@@ -10,20 +11,11 @@ function App() {
 
       <main className="main-content">
         <HeroSection/>
-        
+
         <FeatureSection/>
       </main>
 
-      {/* Component hint: This footer can become a Footer component later. */}
-      <footer className="footer">
-        <div className="brand">StudyNest</div>
-        <p>Made for learning, one step at a time.</p>
-        <div className="footer-links">
-          <a href="#">Privacy</a>
-          <a href="#">Terms</a>
-          <a href="#">Contact</a>
-        </div>
-      </footer>
+      <Footer/>
     </div>
   )
 }
