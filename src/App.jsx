@@ -1,21 +1,10 @@
 import './App.css'
+import Navbar from './layouts/Navbar';
 
 function App() {
   return (
     <div className="page-shell">
-      {/* Component hint: This navbar can become a Navbar component later. */}
-      <header className="topbar">
-        <div className="brand">StudyNest</div>
-
-        <nav className="nav" aria-label="Main navigation">
-          <a href="#" className="nav-link">Home</a>
-          <a href="#" className="nav-link">Programs</a>
-          <a href="#" className="nav-link">Resources</a>
-          <a href="#" className="nav-link">Pricing</a>
-        </nav>
-
-        <button className="nav-button">Get started</button>
-      </header>
+      <Navbar/>
 
       <main className="main-content">
         {/* Component hint: This hero section can become a Hero component later. */}
