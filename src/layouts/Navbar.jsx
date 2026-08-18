@@ -1,4 +1,4 @@
-function Navbar() {
+export default function Navbar() {
     return (
         <header className="topbar">
             <div className="brand">StudyNest</div>
@@ -22,5 +22,3 @@ function Navbar() {
         </header>
     );
 }
-
-export default Navbar;
