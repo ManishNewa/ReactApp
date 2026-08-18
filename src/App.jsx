@@ -1,7 +1,7 @@
 import './App.css';
 import Navbar from './layouts/Navbar';
-import HeroSection from './layouts/HeroSection';
-import FeatureSection from './layouts/FeatureSection';
+import Hero from './layouts/Hero';
+import Features from './layouts/Features';
 import Footer from './layouts/Footer';
 
 function App() {
@@ -10,9 +10,9 @@ function App() {
             <Navbar />
 
             <main className="main-content">
-                <HeroSection />
+                <Hero />
 
-                <FeatureSection />
+                <Features />
             </main>
 
             <Footer />
