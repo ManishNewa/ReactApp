@@ -34,8 +34,8 @@ export default function Hero() {
                 <p className="hero-text"> {content.description}</p>
 
                 <div className="hero-actions">
-                    <BaseButton className="primary-button" label="Start free"/>
-                    <BaseButton className="secondary-button" label="View demo"/>
+                    <BaseButton type="primary" label="Start free"/>
+                    <BaseButton type="secondary" label="View demo" />
                 </div>
 
                 <div className="stats">
