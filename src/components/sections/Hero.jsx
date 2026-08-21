@@ -2,7 +2,7 @@ import EyebrowText from '../common/EyebrowText';
 import BaseButton from '../buttons/BaseButton';
 import Stats from './stats/Stats';
 import MiniCard from '../cards/MiniCard';
-import Bars from '../common/Bars';
+import Bars from '../charts/Bars';
 
 export default function Hero() {
     const content = {
