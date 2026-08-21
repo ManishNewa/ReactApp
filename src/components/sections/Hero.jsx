@@ -7,8 +7,9 @@ export default function Hero() {
     const content = {
         title: 'For focused students',
         header: 'Build your best study routine',
-        description: 'A simple place to stay organized, stay motivated, and keep learning without the overwhelm.'
-    }
+        description:
+            'A simple place to stay organized, stay motivated, and keep learning without the overwhelm.',
+    };
     const stats = [
         {
             id: 1,
@@ -26,6 +27,17 @@ export default function Hero() {
             value: '24/7',
         },
     ];
+    const tasks = [
+        {
+            id: 1,
+            title: 'Read chapter 4',
+        },
+        {
+            id: 2,
+            title: 'Finish quiz',
+        },
+    ];
+
     return (
         <section className="hero">
             <div className="hero-copy">
@@ -34,7 +46,7 @@ export default function Hero() {
                 <p className="hero-text"> {content.description}</p>
 
                 <div className="hero-actions">
-                    <BaseButton type="primary" label="Start free"/>
+                    <BaseButton type="primary" label="Start free" />
                     <BaseButton type="secondary" label="View demo" />
                 </div>
 
@@ -53,15 +65,20 @@ export default function Hero() {
                 </MiniCard>
 
                 <MiniCard className="chart-card" title="Study hours">
-                    <Bars counts="5"/>
+                    <Bars counts="5" />
                 </MiniCard>
 
-                <MiniCard className="task-card" title="Weekly focus">
-                    <ul>
-                        <li>Read chapter 4</li>
-                        <li>Finish quiz</li>
-                    </ul>
-                </MiniCard>
+                {tasks.length > 0 && (
+                    <MiniCard className="task-card" title="Weekly focus">
+                        <ul>
+                            {
+                                tasks.map((task) => (
+                                    <li key={task.id}>{task.title}</li>
+                                ))
+                            }
+                        </ul>
+                    </MiniCard>
+                )}
             </div>
         </section>
     );
