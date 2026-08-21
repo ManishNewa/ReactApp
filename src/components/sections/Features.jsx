@@ -1,4 +1,4 @@
-import FeatureCard from '../components/cards/FeatureCard';
+import FeatureCard from '../cards/FeatureCard';
 
 export default function FeatureSection() {
     const features = [
