@@ -1,6 +1,24 @@
 import BaseButton from '../buttons/BaseButton';
+import Stat from './stats/Stat';
 
 export default function Hero() {
+    const stats = [
+        {
+            id: 1,
+            title: 'students',
+            value: '12k+',
+        },
+        {
+            id: 2,
+            title: 'rating',
+            value: '4.9/5',
+        },
+        {
+            id: 3,
+            title: 'support',
+            value: '24/7',
+        },
+    ];
     return (
         <section className="hero">
             <div className="hero-copy">
@@ -17,18 +35,11 @@ export default function Hero() {
                 </div>
 
                 <div className="stats">
-                    <div>
-                        <strong>12k+</strong>
-                        <span>students</span>
-                    </div>
-                    <div>
-                        <strong>4.9/5</strong>
-                        <span>rating</span>
-                    </div>
-                    <div>
-                        <strong>24/7</strong>
-                        <span>support</span>
-                    </div>
+                    {
+                        stats.map((stat)=> (
+                            <Stat key={stat.id} {...stat}/>
+                        ))
+                    }
                 </div>
             </div>
 
