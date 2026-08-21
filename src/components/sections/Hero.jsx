@@ -1,5 +1,5 @@
 import BaseButton from '../buttons/BaseButton';
-import Stat from './stats/Stat';
+import Stats from './stats/Stats';
 import MiniCard from '../cards/MiniCard';
 import Bars from '../common/Bars';
 
@@ -49,14 +49,8 @@ export default function Hero() {
                     <BaseButton type="primary" label="Start free" />
                     <BaseButton type="secondary" label="View demo" />
                 </div>
-
-                <div className="stats">
-                    {
-                        stats.map((stat)=> (
-                            <Stat key={stat.id} {...stat}/>
-                        ))
-                    }
-                </div>
+                
+                <Stats stats={stats}/>                
             </div>
 
             <div className="hero-card" aria-label="Study dashboard preview">
