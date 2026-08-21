@@ -1,4 +1,26 @@
+import FeatureCard from '../components/cards/FeatureCard';
+
 export default function FeatureSection() {
+    const features = [
+        {
+            order: '01',
+            title: 'Study smarter',
+            description:
+                'See weekly wins and stay focused on the goals that matter most.',
+        },
+        {
+            order: '02',
+            title: 'Track progress',
+            description:
+                'See weekly wins and stay focused on the goals that matter most.',
+        },
+        {
+            order: '03',
+            title: 'Learn with ease',
+            description:
+                'Access simple tools and guided resources designed for busy students.',
+        },
+    ];
     return (
         <section className="features">
             <div className="section-heading">
@@ -7,32 +29,11 @@ export default function FeatureSection() {
             </div>
 
             <div className="feature-grid">
-                <article className="feature-card">
-                    <div className="feature-icon">01</div>
-                    <h3>Study smarter</h3>
-                    <p>
-                        Organize lessons, notes, and deadlines in one calm
-                        workspace.
-                    </p>
-                </article>
-
-                <article className="feature-card">
-                    <div className="feature-icon">02</div>
-                    <h3>Track progress</h3>
-                    <p>
-                        See weekly wins and stay focused on the goals that
-                        matter most.
-                    </p>
-                </article>
-
-                <article className="feature-card">
-                    <div className="feature-icon">03</div>
-                    <h3>Learn with ease</h3>
-                    <p>
-                        Access simple tools and guided resources designed for
-                        busy students.
-                    </p>
-                </article>
+                {
+                    features.map((feature) => (
+                        <FeatureCard key={feature.order} feature={feature} />
+                    ))
+                }
             </div>
         </section>
     );
