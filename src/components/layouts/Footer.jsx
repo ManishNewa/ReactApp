@@ -1,4 +1,6 @@
-export default function Footer({ brandName }) {
+import BrandName from "../common/BrandName";
+
+export default function Footer() {
     const headerContent = 'Made for learning, one step at a time.';
     const footerLinks = [
         {
@@ -19,7 +21,7 @@ export default function Footer({ brandName }) {
     ];
     return (
         <footer className="footer">
-            <div className="brand">{brandName}</div>
+            <BrandName />
             <p>{headerContent}.</p>
             <div className="footer-links">
                 {

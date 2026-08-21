@@ -1,10 +1,12 @@
+import BrandName from '../common/BrandName';
 import BaseButton from '../buttons/BaseButton';
 
-export default function Navbar({ brandName }) {
+export default function Navbar() {
     const navLinks = ['Home', 'Programs', 'Resources', 'Pricing'];
+
     return (
         <header className="topbar">
-            <div className="brand">{brandName}</div>
+            <BrandName />
 
             <nav className="nav" aria-label="Main navigation">
                 {
