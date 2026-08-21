@@ -1,6 +1,10 @@
 import FeatureCard from '../cards/FeatureCard';
 
 export default function FeatureSection() {
+    const content = {
+        title: 'Why students choose us',
+        heading: 'Everything you need to learn with clarity.',
+    };
     const features = [
         {
             order: '01',
@@ -24,8 +28,8 @@ export default function FeatureSection() {
     return (
         <section className="features">
             <div className="section-heading">
-                <p className="eyebrow">Why students choose us</p>
-                <h2>Everything you need to learn with clarity.</h2>
+                <p className="eyebrow">{content.title}</p>
+                <h2>{content.heading}</h2>
             </div>
 
             <div className="feature-grid">
