@@ -1,8 +1,8 @@
 import './App.css';
-import Navbar from './layouts/Navbar';
+import Navbar from './components/layouts/Navbar';
 import Hero from './components/sections/Hero';
 import Features from './components/sections/Features';
-import Footer from './layouts/Footer';
+import Footer from './components/layouts/Footer';
 
 function App() {
     return (

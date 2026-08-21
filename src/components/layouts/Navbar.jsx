@@ -1,4 +1,4 @@
-import BaseButton from '../components/buttons/BaseButton';
+import BaseButton from '../buttons/BaseButton';
 
 export default function Navbar() {
     return (
