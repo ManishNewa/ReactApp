@@ -4,6 +4,11 @@ import MiniCard from '../cards/MiniCard';
 import Bars from '../common/Bars';
 
 export default function Hero() {
+    const content = {
+        eyebrow: 'For focused students',
+        title: 'Build your best study routine',
+        description: 'A simple place to stay organized, stay motivated, and keep learning without the overwhelm.'
+    }
     const stats = [
         {
             id: 1,
@@ -24,12 +29,9 @@ export default function Hero() {
     return (
         <section className="hero">
             <div className="hero-copy">
-                <p className="eyebrow">For focused students</p>
-                <h1>Build your best study routine.</h1>
-                <p className="hero-text">
-                    A simple place to stay organized, stay motivated, and keep
-                    learning without the overwhelm.
-                </p>
+                <p className="eyebrow">{content.eyebrow}</p>
+                <h1>{content.title}.</h1>
+                <p className="hero-text"> {content.description}</p>
 
                 <div className="hero-actions">
                     <BaseButton className="primary-button" label="Start free"/>
