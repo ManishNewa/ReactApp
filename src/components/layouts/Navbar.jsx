@@ -1,23 +1,19 @@
 import BaseButton from '../buttons/BaseButton';
 
 export default function Navbar() {
+    const navLinks = ['Home', 'Programs', 'Resources', 'Pricing'];
     return (
         <header className="topbar">
             <div className="brand">StudyNest</div>
 
             <nav className="nav" aria-label="Main navigation">
-                <a href="#" className="nav-link">
-                    Home
-                </a>
-                <a href="#" className="nav-link">
-                    Programs
-                </a>
-                <a href="#" className="nav-link">
-                    Resources
-                </a>
-                <a href="#" className="nav-link">
-                    Pricing
-                </a>
+                {
+                    navLinks.map((navLink)=> (
+                        <a key={navLink} href="#" className="nav-link">
+                            {navLink}
+                        </a>
+                    ))
+                }
             </nav>
 
             <BaseButton className="nav-button" label="Get started" />
