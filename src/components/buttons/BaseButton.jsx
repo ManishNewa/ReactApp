@@ -1,5 +1,5 @@
-export default function BaseButton({label, customClass}) {
+export default function BaseButton({label, className}) {
     return(
-        <button className={customClass}>{label}</button>
+        <button className={className}>{label}</button>
     );
 }
