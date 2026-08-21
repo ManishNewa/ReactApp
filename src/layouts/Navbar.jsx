@@ -1,3 +1,5 @@
+import BaseButton from '../components/buttons/BaseButton';
+
 export default function Navbar() {
     return (
         <header className="topbar">
@@ -18,7 +20,7 @@ export default function Navbar() {
                 </a>
             </nav>
 
-            <button className="nav-button">Get started</button>
+            <BaseButton className="nav-button" label="Get started" />
         </header>
     );
 }

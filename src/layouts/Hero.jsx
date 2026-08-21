@@ -1,3 +1,5 @@
+import BaseButton from '../components/buttons/BaseButton';
+
 export default function Hero() {
     return (
         <section className="hero">
@@ -10,8 +12,8 @@ export default function Hero() {
                 </p>
 
                 <div className="hero-actions">
-                    <button className="primary-button">Start free</button>
-                    <button className="secondary-button">View demo</button>
+                    <BaseButton className="primary-button" label="Start free"/>
+                    <BaseButton className="secondary-button" label="View demo"/>
                 </div>
 
                 <div className="stats">
