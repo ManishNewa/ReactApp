@@ -9,7 +9,7 @@ function App() {
 
     return (
         <div className="page-shell">
-            <Navbar appName={brandName} />
+            <Navbar brandName={brandName} />
 
             <main className="main-content">
                 <Hero />
@@ -17,7 +17,7 @@ function App() {
                 <Features />
             </main>
 
-            <Footer appName={brandName} />
+            <Footer brandName={brandName} />
         </div>
     );
 }
