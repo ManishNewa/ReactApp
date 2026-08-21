@@ -1,12 +1,37 @@
 export default function Footer() {
+    const content = {
+        title: 'StudyNest',
+        header: 'Made for learning, one step at a time.'
+    };
+    const footerLinks = [
+        {
+            id: 1,
+            title: 'Privacy',
+            link: '#',
+        },
+        {
+            id: 2,
+            title: 'Terms',
+            link: '#',
+        },
+        {
+            id: 3,
+            title: 'Contact',
+            link: '#',
+        },
+    ];
     return (
         <footer className="footer">
-            <div className="brand">StudyNest</div>
-            <p>Made for learning, one step at a time.</p>
+            <div className="brand">{content.title}</div>
+            <p>{content.header}.</p>
             <div className="footer-links">
-                <a href="#">Privacy</a>
-                <a href="#">Terms</a>
-                <a href="#">Contact</a>
+                {
+                    footerLinks.map((footerLink) => (
+                        <a key={footerLink.id} href={footerLink.link}>
+                            {footerLink.title}
+                        </a>
+                    ))
+                }
             </div>
         </footer>
     );
