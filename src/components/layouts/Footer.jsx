@@ -1,8 +1,5 @@
 export default function Footer({ brandName }) {
-    const content = {
-        title: 'StudyNest',
-        header: 'Made for learning, one step at a time.'
-    };
+    const headerContent = 'Made for learning, one step at a time.';
     const footerLinks = [
         {
             id: 1,
@@ -23,7 +20,7 @@ export default function Footer({ brandName }) {
     return (
         <footer className="footer">
             <div className="brand">{brandName}</div>
-            <p>{content.header}.</p>
+            <p>{headerContent}.</p>
             <div className="footer-links">
                 {
                     footerLinks.map((footerLink) => (
