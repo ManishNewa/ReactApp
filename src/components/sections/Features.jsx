@@ -31,7 +31,7 @@ export default function FeatureSection() {
             <div className="feature-grid">
                 {
                     features.map((feature) => (
-                        <FeatureCard key={feature.order} feature={feature} />
+                        <FeatureCard key={feature.order} {...feature} />
                     ))
                 }
             </div>
