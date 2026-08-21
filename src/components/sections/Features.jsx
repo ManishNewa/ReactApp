@@ -1,4 +1,5 @@
 import FeatureCard from '../cards/FeatureCard';
+import EyebrowText from '../common/EyebrowText';
 
 export default function FeatureSection() {
     const content = {
@@ -28,7 +29,7 @@ export default function FeatureSection() {
     return (
         <section className="features">
             <div className="section-heading">
-                <p className="eyebrow">{content.title}</p>
+                <EyebrowText text={content.title} />
                 <h2>{content.heading}</h2>
             </div>
 

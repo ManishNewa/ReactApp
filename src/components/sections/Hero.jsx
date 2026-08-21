@@ -1,3 +1,4 @@
+import EyebrowText from '../common/EyebrowText';
 import BaseButton from '../buttons/BaseButton';
 import Stats from './stats/Stats';
 import MiniCard from '../cards/MiniCard';
@@ -41,7 +42,7 @@ export default function Hero() {
     return (
         <section className="hero">
             <div className="hero-copy">
-                <p className="eyebrow">{content.title}</p>
+                <EyebrowText text={content.title} />
                 <h1>{content.header}.</h1>
                 <p className="hero-text"> {content.description}</p>
 
@@ -49,8 +50,8 @@ export default function Hero() {
                     <BaseButton type="primary" label="Start free" />
                     <BaseButton type="secondary" label="View demo" />
                 </div>
-                
-                <Stats stats={stats}/>                
+
+                <Stats stats={stats} />
             </div>
 
             <div className="hero-card" aria-label="Study dashboard preview">
@@ -65,11 +66,9 @@ export default function Hero() {
                 {tasks.length > 0 && (
                     <MiniCard className="task-card" title="Weekly focus">
                         <ul>
-                            {
-                                tasks.map((task) => (
-                                    <li key={task.id}>{task.title}</li>
-                                ))
-                            }
+                            {tasks.map((task) => (
+                                <li key={task.id}>{task.title}</li>
+                            ))}
                         </ul>
                     </MiniCard>
                 )}
