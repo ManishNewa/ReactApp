@@ -1,4 +1,4 @@
-export default function Footer() {
+export default function Footer({ brandName }) {
     const content = {
         title: 'StudyNest',
         header: 'Made for learning, one step at a time.'
@@ -22,7 +22,7 @@ export default function Footer() {
     ];
     return (
         <footer className="footer">
-            <div className="brand">{content.title}</div>
+            <div className="brand">{brandName}</div>
             <p>{content.header}.</p>
             <div className="footer-links">
                 {
