@@ -5,8 +5,8 @@ import Bars from '../common/Bars';
 
 export default function Hero() {
     const content = {
-        eyebrow: 'For focused students',
-        title: 'Build your best study routine',
+        title: 'For focused students',
+        header: 'Build your best study routine',
         description: 'A simple place to stay organized, stay motivated, and keep learning without the overwhelm.'
     }
     const stats = [
@@ -29,8 +29,8 @@ export default function Hero() {
     return (
         <section className="hero">
             <div className="hero-copy">
-                <p className="eyebrow">{content.eyebrow}</p>
-                <h1>{content.title}.</h1>
+                <p className="eyebrow">{content.title}</p>
+                <h1>{content.header}.</h1>
                 <p className="hero-text"> {content.description}</p>
 
                 <div className="hero-actions">
