@@ -1,5 +1,6 @@
 import BaseButton from '../buttons/BaseButton';
 import Stat from './stats/Stat';
+import MiniCard from '../cards/MiniCard';
 
 export default function Hero() {
     const stats = [
@@ -44,13 +45,11 @@ export default function Hero() {
             </div>
 
             <div className="hero-card" aria-label="Study dashboard preview">
-                <div className="mini-card top-card">
-                    <span>Weekly focus</span>
+                <MiniCard className="top-card" title="Weekly focus">
                     <strong>85%</strong>
-                </div>
+                </MiniCard>
 
-                <div className="mini-card chart-card">
-                    <span>Study hours</span>
+                <MiniCard className="chart-card" title="Study hours">
                     <div className="bars">
                         <i className="bar-one" />
                         <i className="bar-two" />
@@ -58,15 +57,14 @@ export default function Hero() {
                         <i className="bar-four" />
                         <i className="bar-five" />
                     </div>
-                </div>
+                </MiniCard>
 
-                <div className="mini-card task-card">
-                    <span>Today</span>
+                <MiniCard className="task-card" title="Weekly focus">
                     <ul>
                         <li>Read chapter 4</li>
                         <li>Finish quiz</li>
                     </ul>
-                </div>
+                </MiniCard>
             </div>
         </section>
     );
