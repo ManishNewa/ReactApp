@@ -5,11 +5,9 @@ import Features from './components/sections/Features';
 import Footer from './components/layouts/Footer';
 
 function App() {
-    const brandName = 'StudyNest';
-
     return (
         <div className="page-shell">
-            <Navbar brandName={brandName} />
+            <Navbar />
 
             <main className="main-content">
                 <Hero />
@@ -17,7 +15,7 @@ function App() {
                 <Features />
             </main>
 
-            <Footer brandName={brandName} />
+            <Footer />
         </div>
     );
 }
