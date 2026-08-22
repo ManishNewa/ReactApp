@@ -41,7 +41,7 @@ function App() {
             </section>
             <section className="pricing-section w-full max-w-[260]">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-4">
-                    <div className="bg-slate-800 text-white p-8 border border-slate-500 flex flex-col rounded-e-3xl">
+                    <div className="bg-slate-800 text-white p-8 border border-slate-500 flex flex-col rounded-4xl">
                         {/* Popular Tag */}
                         {/* <span>MOST POPULAR</span> */}
                         <div className="price">
