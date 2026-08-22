@@ -6,9 +6,9 @@ export default function PricingCard({ features, type, amount, isPopular }) {
             <div className="price mb-2">
                 <div className="flex items-baseline gap-2 my-2">
                     <h1 className="text-white font-bold text-4xl">{amount}</h1>
-                    <span className="text-slate-400">/{type}</span>
+                    <span className="text-slate-400">/month</span>
                 </div>
-                <div className="text-2xl font-semibold">Base</div>
+                <div className="text-2xl font-semibold">{type}</div>
             </div>
             <p className="text-slate-400 text-sm mb-6">
                 For most businesses that want to optimize web queries
