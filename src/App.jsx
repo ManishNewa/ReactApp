@@ -23,7 +23,7 @@ function App() {
     ];
     return (
         <main className="min-h-screen bg-[#0F172A] flex flex-col py-20 px-5 mx-auto">
-            <section className="hero-section flex flex-col items-center justify-center gap-2">
+            <section className="hero-section flex flex-col items-center justify-center gap-2 mb-20">
                 <h1 className="text-white text-[32px] font-bold mb-4">
                     Simple, transparent pricing
                 </h1>
