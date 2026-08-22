@@ -45,11 +45,11 @@ function App() {
                         {/* Popular Tag */}
                         {/* <span>MOST POPULAR</span> */}
                         <div className="price">
-                            <div className="flex items-baseline">
+                            <div className="flex items-baseline gap-2 my-2">
                                 <h1 className="text-white text-bold text-4xl">
                                     $80
                                 </h1>
-                                <span>/month</span>
+                                <span className="text-slate-400">/month</span>
                             </div>
                             <div className="text-2xl font-semibold">Base</div>
                         </div>
