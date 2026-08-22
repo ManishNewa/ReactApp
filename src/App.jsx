@@ -61,7 +61,7 @@ function App() {
                             {features1.map((feature) => (
                                 <li
                                     key={feature.id}
-                                    className="flex items-center gap-2"
+                                    className="flex items-center gap-4"
                                 >
                                     <svg
                                         className="w-3.5 h-3.5"
@@ -74,7 +74,7 @@ function App() {
                                             clipRule="evenodd"
                                         />
                                     </svg>
-                                    {feature.value}
+                                    <span className="text-md font-medium text-slate-400">{feature.value}</span>
                                 </li>
                             ))}
                         </ul>
