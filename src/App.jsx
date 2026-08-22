@@ -57,7 +57,7 @@ function App() {
                             For most businesses that want to optimize web
                             queries
                         </p>
-                        <ul className="flex-1 mb-8">
+                        <ul className="flex-1 mb-8 space-y-3">
                             {features1.map((feature) => (
                                 <li
                                     key={feature.id}
