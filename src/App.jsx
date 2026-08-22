@@ -22,12 +22,12 @@ function App() {
         },
     ];
     return (
-        <main className="min-h-screen bg-[#0F172A] py-[10vh]">
+        <main className="min-h-screen bg-[#0F172A] py-[10vh] mx-auto">
             <section className="hero-section flex flex-col items-center justify-center gap-2">
-                <h1 className="text-white text-[32px] font-bold">
+                <h1 className="text-white text-[32px] font-bold mb-4">
                     Simple, transparent pricing
                 </h1>
-                <p className="text-slate-400 mb-4 font-semibold">
+                <p className="text-lg text-slate-400 mb-4 font-semibold">
                     No contracts. No suprise fees.
                 </p>
                 <div className="flex p-2 gap-5 bg-[#1E293B] border-2 border-[#263145] rounded-[50px]">
