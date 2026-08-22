@@ -5,7 +5,7 @@ export default function PricingCard({ features, type, amount, isPopular }) {
             {isPopular && <span>MOST POPULAR</span>}
             <div className="price mb-2">
                 <div className="flex items-baseline gap-2 my-2">
-                    <h1 className="text-white text-bold text-4xl">{amount}</h1>
+                    <h1 className="text-white font-bold text-4xl">{amount}</h1>
                     <span className="text-slate-400">/{type}</span>
                 </div>
                 <div className="text-2xl font-semibold">Base</div>
