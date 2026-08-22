@@ -78,7 +78,7 @@ function App() {
                                 </li>
                             ))}
                         </ul>
-                        <button className="text-white text-center bg-[#1E293B] py-3 px-10 rounded-2xl">
+                        <button className="text-white text-center py-4 rounded-full w-full bg-slate-600">
                             Downgrade
                         </button>
                     </div>
