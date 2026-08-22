@@ -1,12 +1,12 @@
-export default function PricingCard({ features }) {
+export default function PricingCard({ features, type, amount, isPopular }) {
     return (
         <div className="bg-slate-800 text-white p-8 border border-slate-500 flex flex-col rounded-4xl">
             {/* Popular Tag */}
-            {/* <span>MOST POPULAR</span> */}
+            {isPopular && <span>MOST POPULAR</span>}
             <div className="price mb-2">
                 <div className="flex items-baseline gap-2 my-2">
-                    <h1 className="text-white text-bold text-4xl">$80</h1>
-                    <span className="text-slate-400">/month</span>
+                    <h1 className="text-white text-bold text-4xl">{amount}</h1>
+                    <span className="text-slate-400">/{type}</span>
                 </div>
                 <div className="text-2xl font-semibold">Base</div>
             </div>

@@ -1,6 +1,23 @@
 import PricingCard from '../cards/PricingCard';
 
 export default function Pricings() {
+    const types = [
+        {
+            type: 'base',
+            amount: '$80',
+            isPopular: false,
+        },
+        {
+            type: 'pro',
+            amount: '$120',
+            isPopular: true,
+        },
+        {
+            type: 'enterprise',
+            amount: '$260',
+            isPopular: false,
+        },
+    ];
     const features = [
         'All limited links',
         'Own analytics platform',
@@ -29,7 +46,9 @@ export default function Pricings() {
             </section>
             <section className="pricing-section w-full max-w-[260]">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-4">
-                    <PricingCard features={features} />
+                    {types.map((type) => (
+                        <PricingCard features={features} {...type} />
+                    ))}
                 </div>
             </section>
         </>
