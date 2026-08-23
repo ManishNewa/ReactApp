@@ -1,8 +1,11 @@
 export default function PricingCard({ features, type, amount, isPopular }) {
     return (
-        <div className="bg-slate-800 text-white p-8 border border-slate-500 flex flex-col rounded-4xl">
-            {/* Popular Tag */}
-            {isPopular && <span>MOST POPULAR</span>}
+        <div className="relative bg-slate-800 text-white p-8 border border-slate-500 flex flex-col rounded-4xl">
+            {isPopular && (
+                <span className="absolute top-4 right-6 text-white bg-white/20 text-sm font-bold uppercase px-3 py-2 rounded-full">
+                    MOST POPULAR
+                </span>
+            )}
             <div className="price mb-2">
                 <div className="flex items-baseline gap-2 my-2">
                     <h1 className="text-white font-bold text-4xl">{amount}</h1>
