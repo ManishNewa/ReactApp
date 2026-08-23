@@ -9,18 +9,13 @@ The purpose of this repository is to track my progress throughout the course and
 To run this project locally, switch to the corresponding branch first and install the required dependencies:
 
 ```bash
-git checkout task/tailwind-pricing-section
+git checkout task/TemperaturePractice
 npm install
-```
-
-After installing the dependencies, start the development server using:
-
-```bash
 npm run dev
 ```
 ## 📚 Task 3B – Temperature Controller
 
-**Branch:** `task/TemperaturePractice`
+**Branch:** [task/TemperaturePractice](https://github.com/ManishNewa/ReactApp/tree/task/TemperaturePractice)
 
 This task focuses on using React's **`useState` hook** to manage and update a temperature value.
 
