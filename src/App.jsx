@@ -1,5 +1,11 @@
+import MiniTrafficLight from './components/MiniTrafficLight';
+
 function App() {
-    return <></>;
+    return (
+        <>
+            <MiniTrafficLight />
+        </>
+    );
 }
 
 export default App;
