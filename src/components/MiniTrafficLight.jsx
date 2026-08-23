@@ -12,7 +12,11 @@ const colorMap = {
 };
 
 function MiniTrafficLight() {
-    const light = 'red';
+    const [light, setLight] = useState('red');
+
+    function changeLight(light) {
+        setLight(light);
+    }
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-zinc-100 p-6">
@@ -28,13 +32,22 @@ function MiniTrafficLight() {
                 </p>
 
                 <div className="mt-6 flex items-center justify-center gap-3">
-                    <button className="rounded-lg bg-red-500 px-4 py-2 text-sm font-bold text-white">
+                    <button
+                        onClick={() => changeLight('red')}
+                        className="rounded-lg bg-red-500 px-4 py-2 text-sm font-bold text-white"
+                    >
                         Red
                     </button>
-                    <button className="rounded-lg bg-yellow-400 px-4 py-2 text-sm font-bold text-zinc-900">
+                    <button
+                        onClick={() => changeLight('yellow')}
+                        className="rounded-lg bg-yellow-400 px-4 py-2 text-sm font-bold text-zinc-900"
+                    >
                         Yellow
                     </button>
-                    <button className="rounded-lg bg-green-500 px-4 py-2 text-sm font-bold text-white">
+                    <button
+                        onClick={() => changeLight('green')}
+                        className="rounded-lg bg-green-500 px-4 py-2 text-sm font-bold text-white"
+                    >
                         Green
                     </button>
                 </div>
