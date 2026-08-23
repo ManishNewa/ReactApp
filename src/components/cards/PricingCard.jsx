@@ -1,11 +1,11 @@
 export default function PricingCard({ features, type, amount, isPopular }) {
     return (
         <div
-            className={`relative text-white p-8 border flex flex-col rounded-4xl 
+            className={`relative text-white p-8 flex flex-col rounded-4xl 
             ${
                 isPopular
-                    ? 'bg-indigo-500 scale-105'
-                    : 'bg-slate-800 border-slate-900'
+                    ? 'bg-indigo-500 shadow-indigo-500/30 scale-105 shadow-xl'
+                    : 'bg-slate-800 shadow-md border border-slate-700'
             }`}
         >
             {isPopular && (
