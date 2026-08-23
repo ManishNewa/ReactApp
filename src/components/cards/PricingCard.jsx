@@ -50,7 +50,7 @@ export default function PricingCard({ features, type, amount, isPopular }) {
                 ))}
             </ul>
             <button className="text-white text-center py-4 rounded-full w-full bg-slate-600">
-                Downgrade
+                {type === 'base' ? 'Downgrade' : 'Upgrade'}
             </button>
         </div>
     );
