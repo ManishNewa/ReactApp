@@ -11,17 +11,10 @@ To run this project locally, switch to the corresponding branch first and instal
 ```bash
 git checkout task/tailwind-pricing-section
 npm install
-```
-
-After installing the dependencies, start the development server using:
-
-```bash
 npm run dev
 ```
 
-## 📚 Course Tasks
-
-### Task 3A – Traffic Light with useState
+## 📚 Task 3A – Traffic Light with useState
 
 **Branch:** `task/traffic-light-usestate`
 
