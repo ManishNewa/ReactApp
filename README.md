@@ -11,11 +11,6 @@ To run this project locally, switch to the corresponding branch first and instal
 ```bash
 git checkout task/tailwind-pricing-section
 npm install
-```
-
-After installing the dependencies, start the development server using:
-
-```bash
 npm run dev
 ```
 
@@ -23,7 +18,7 @@ npm run dev
 
 ### Task 1 – Component Segregation
 
-**Branch:** `[feature/FurtherComponentsDecomposition](https://github.com/ManishNewa/ReactApp/tree/feature/FurtherComponentsDecomposition)`
+**Branch:** [feature/FurtherComponentsDecomposition](https://github.com/ManishNewa/ReactApp/tree/feature/FurtherComponentsDecomposition)
 
 The first task focuses on understanding the importance of breaking a React application into **smaller, reusable components**.
 
@@ -34,7 +29,7 @@ This task served as an introduction to the core concept of **component-based arc
 
 ### Task 2 – Tailwind CSS & Pricing Section
 
-**Branch:** `[task/PricingSectionUIWithTailwindCss](https://github.com/ManishNewa/ReactApp/tree/task/PricingSectionUIWithTailwindCss)`
+**Branch:** [task/PricingSectionUIWithTailwindCss](https://github.com/ManishNewa/ReactApp/tree/task/PricingSectionUIWithTailwindCss)
 
 The second task focused on learning how to **add, configure, and use Tailwind CSS** in a React project.
 
@@ -45,7 +40,7 @@ The final result of the pricing section is shown below.
 
 ### Task 3A – Traffic Light with useState
 
-**Branch:** `[task/MiniTrafficLight](https://github.com/ManishNewa/ReactApp/tree/task/MiniTrafficLight)`
+**Branch:** [task/MiniTrafficLight](https://github.com/ManishNewa/ReactApp/tree/task/MiniTrafficLight)
 
 This task focuses on learning and using React's **`useState` hook** to manage component state.
 
@@ -67,7 +62,7 @@ https://github.com/user-attachments/assets/650bfb34-365a-404c-8ad1-7f5ae40546e2
 
 ### Task 3A –  Task 3B – Temperature Controller
 
-**Branch:** `[task/TemperaturePractice](https://github.com/ManishNewa/ReactApp/tree/task/TemperaturePractice)`
+**Branch:** [task/TemperaturePractice](https://github.com/ManishNewa/ReactApp/tree/task/TemperaturePractice)
 
 This task focuses on using React's **`useState` hook** to manage and update a temperature value.
 
