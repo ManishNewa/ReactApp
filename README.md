@@ -9,12 +9,12 @@ The purpose of this repository is to track my progress throughout the course and
 To run this project locally, switch to the corresponding branch first and install the required dependencies:
 
 ```bash
-git checkout task/tailwind-pricing-section
+git checkout task/PricingSectionUIWithTailwindCss
 npm install
 npm run dev
 ```
 
-## 📚 Tailwind CSS & Pricing Section
+## 📚 Task 2 - Tailwind CSS & Pricing Section
 
 **Branch:** `(task/PricingSectionUIWithTailwindCss)`
 
@@ -25,9 +25,3 @@ As part of the exercise, a **pricing section template** had to be built based on
 The final result of the pricing section is shown below.
 <img width="2075" height="1492" alt="image" src="https://github.com/user-attachments/assets/3bf106e5-bf4e-484d-8819-d5c6499993e3" />
 
-
-## 🎯 Purpose
-
-This repository is primarily a **learning and practice repository**. It documents my journey through React and provides a collection of examples demonstrating concepts learned throughout the course.
-
-New tasks and exercises will be added as the course progresses.
