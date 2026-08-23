@@ -41,8 +41,7 @@ This task provides an introduction to:
 
 The final result demonstrates a functional traffic light where the active color changes based on the user's selection.
 
-<video controls src="20260823181236.mp4" title="Title"></video>
-
+https://github.com/user-attachments/assets/650bfb34-365a-404c-8ad1-7f5ae40546e2
 
 ## 🎯 Purpose
 
