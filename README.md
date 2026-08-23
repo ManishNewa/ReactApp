@@ -23,7 +23,7 @@ npm run dev
 
 ### Task 1 – Component Segregation
 
-**Branch:** `(feature/FurtherComponentsDecomposition)`
+**Branch:** `[feature/FurtherComponentsDecomposition](https://github.com/ManishNewa/ReactApp/tree/feature/FurtherComponentsDecomposition)`
 
 The first task focuses on understanding the importance of breaking a React application into **smaller, reusable components**.
 
@@ -34,7 +34,7 @@ This task served as an introduction to the core concept of **component-based arc
 
 ### Task 2 – Tailwind CSS & Pricing Section
 
-**Branch:** `(task/PricingSectionUIWithTailwindCss)`
+**Branch:** `[task/PricingSectionUIWithTailwindCss](https://github.com/ManishNewa/ReactApp/tree/task/PricingSectionUIWithTailwindCss)`
 
 The second task focused on learning how to **add, configure, and use Tailwind CSS** in a React project.
 
@@ -45,7 +45,7 @@ The final result of the pricing section is shown below.
 
 ### Task 3A – Traffic Light with useState
 
-**Branch:** `task/traffic-light-usestate`
+**Branch:** `[task/MiniTrafficLight](https://github.com/ManishNewa/ReactApp/tree/task/MiniTrafficLight)`
 
 This task focuses on learning and using React's **`useState` hook** to manage component state.
 
@@ -64,6 +64,30 @@ This task provides an introduction to:
 The final result demonstrates a functional traffic light where the active color changes based on the user's selection.
 
 https://github.com/user-attachments/assets/650bfb34-365a-404c-8ad1-7f5ae40546e2
+
+### Task 3A –  Task 3B – Temperature Controller
+
+**Branch:** `[task/TemperaturePractice](https://github.com/ManishNewa/ReactApp/tree/task/TemperaturePractice)`
+
+This task focuses on using React's **`useState` hook** to manage and update a temperature value.
+
+The initial temperature is set to **20°C**. The user can interact with three buttons to control the temperature:
+
+* **Minus (-):** Decreases the temperature by 1°C.
+* **Reset to 20°C:** Resets the temperature back to **20°C**.
+* **Plus (+):** Increases the temperature by 1°C.
+
+The task provides further practice with:
+
+* Managing state using `useState`.
+* Updating state based on user interactions.
+* Handling button click events.
+* Resetting state to an initial value.
+* Dynamically displaying updated state values in the UI.
+
+The final result is a functional temperature controller that allows the user to increase, decrease, or reset the displayed temperature.
+
+https://github.com/user-attachments/assets/a7a813f6-07d5-4414-9102-c0a727f737e1
 
 ## 🎯 Purpose
 
