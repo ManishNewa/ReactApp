@@ -49,7 +49,9 @@ export default function PricingCard({ features, type, amount, isPopular }) {
                     </li>
                 ))}
             </ul>
-            <button className="text-white text-center py-4 rounded-full w-full bg-slate-600">
+            <button
+                className={`text-center font-semibold py-4 rounded-full w-full ${isPopular ? 'text-indigo-600 bg-white' : 'text-white bg-slate-600'}`}
+            >
                 {type === 'base' ? 'Downgrade' : 'Upgrade'}
             </button>
         </div>
