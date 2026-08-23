@@ -60,7 +60,7 @@ The final result demonstrates a functional traffic light where the active color 
 
 https://github.com/user-attachments/assets/650bfb34-365a-404c-8ad1-7f5ae40546e2
 
-### Task 3A –  Task 3B – Temperature Controller
+### Task 3B – Temperature Controller
 
 **Branch:** [task/TemperaturePractice](https://github.com/ManishNewa/ReactApp/tree/task/TemperaturePractice)
 
