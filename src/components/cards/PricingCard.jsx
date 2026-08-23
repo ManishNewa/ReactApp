@@ -1,3 +1,5 @@
+import BaseButton from '../buttons/BaseButton';
+
 export default function PricingCard({ features, type, amount, isPopular }) {
     return (
         <div
@@ -49,16 +51,10 @@ export default function PricingCard({ features, type, amount, isPopular }) {
                     </li>
                 ))}
             </ul>
-            <button
-                className={`text-center font-semibold py-4 rounded-full w-full hover:cursor-pointer hover:scale-105
-                ${
-                    isPopular
-                        ? 'text-indigo-600 bg-white hover:bg-slate-50'
-                        : 'text-white bg-slate-600 hover:bg-slate-500'
-                }`}
-            >
-                {type === 'base' ? 'Downgrade' : 'Upgrade'}
-            </button>
+            <BaseButton
+                isPopular={isPopular}
+                label={type === 'base' ? 'Downgrade' : 'Upgrade'}
+            />
         </div>
     );
 }
