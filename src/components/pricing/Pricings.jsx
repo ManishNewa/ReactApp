@@ -31,14 +31,14 @@ export default function Pricings() {
             <h1 className="text-white text-[32px] font-bold mb-4">
                 Simple, transparent pricing
             </h1>
-            <p className="text-lg text-slate-400 mb-4 font-semibold">
+            <p className="text-lg text-slate-400 mb-8 font-semibold">
                 No contracts. No suprise fees.
             </p>
             <div className="flex p-2 mb-10 gap-5 bg-[#1E293B] border-2 border-[#263145] rounded-[50px]">
-                <button className="uppercase px-5 py-2 bg-[#6366F1] rounded-[50px] font-semibold text-white">
+                <button className="uppercase px-5 py-3 bg-indigo-400 rounded-[50px] font-semibold text-white">
                     Monthly
                 </button>
-                <button className="uppercase px-5 py-2 font-semibold text-slate-400">
+                <button className="uppercase px-5 py-3 font-semibold text-slate-400">
                     Yearly
                 </button>
             </div>
