@@ -35,10 +35,10 @@ export default function Pricings() {
                 No contracts. No suprise fees.
             </p>
             <div className="flex p-2 mb-10 gap-5 bg-[#1E293B] border-2 border-[#263145] rounded-[50px]">
-                <button className="uppercase px-5 py-3 bg-indigo-400 rounded-[50px] font-semibold text-white">
+                <button className="uppercase px-5 py-3 bg-indigo-400 rounded-[50px] font-semibold text-white hover:cursor-pointer">
                     Monthly
                 </button>
-                <button className="uppercase px-5 py-3 font-semibold text-slate-400">
+                <button className="uppercase px-5 py-3 font-semibold text-slate-400 hover:cursor-pointer">
                     Yearly
                 </button>
             </div>
