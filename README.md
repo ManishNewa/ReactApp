@@ -9,14 +9,14 @@ The purpose of this repository is to track my progress throughout the course and
 To run this project locally, switch to the corresponding branch first and install the required dependencies:
 
 ```bash
-git checkout task/tailwind-pricing-section
+git checkout task/MiniTrafficLight
 npm install
 npm run dev
 ```
 
 ## 📚 Task 3A – Traffic Light with useState
 
-**Branch:** `task/traffic-light-usestate`
+**Branch:** [task/MiniTrafficLight](https://github.com/ManishNewa/ReactApp/tree/task/MiniTrafficLight)
 
 This task focuses on learning and using React's **`useState` hook** to manage component state.
 
@@ -35,9 +35,3 @@ This task provides an introduction to:
 The final result demonstrates a functional traffic light where the active color changes based on the user's selection.
 
 https://github.com/user-attachments/assets/650bfb34-365a-404c-8ad1-7f5ae40546e2
-
-## 🎯 Purpose
-
-This repository is primarily a **learning and practice repository**. It documents my journey through React and provides a collection of examples demonstrating concepts learned throughout the course.
-
-New tasks and exercises will be added as the course progresses.
