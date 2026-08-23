@@ -1,6 +1,13 @@
 export default function PricingCard({ features, type, amount, isPopular }) {
     return (
-        <div className="relative bg-slate-800 text-white p-8 border border-slate-500 flex flex-col rounded-4xl">
+        <div
+            className={`relative text-white p-8 border flex flex-col rounded-4xl 
+            ${
+                isPopular
+                    ? 'bg-indigo-500 scale-105'
+                    : 'bg-slate-800 border-slate-900'
+            }`}
+        >
             {isPopular && (
                 <span className="absolute top-4 right-6 text-white bg-white/20 text-sm font-bold uppercase px-3 py-2 rounded-full">
                     MOST POPULAR
