@@ -2,9 +2,9 @@ import Pricings from './components/pricing/Pricings';
 
 function App() {
     return (
-        <main className="min-h-screen bg-[#0F172A] flex flex-col py-20 px-5 mx-auto">
+        <div className="min-h-screen bg-[#0F172A] flex flex-col items-center py-20 px-5 md:px-10 mx-auto">
             <Pricings />
-        </main>
+        </div>
     );
 }
 
