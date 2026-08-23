@@ -50,7 +50,12 @@ export default function PricingCard({ features, type, amount, isPopular }) {
                 ))}
             </ul>
             <button
-                className={`text-center font-semibold py-4 rounded-full w-full ${isPopular ? 'text-indigo-600 bg-white' : 'text-white bg-slate-600'}`}
+                className={`text-center font-semibold py-4 rounded-full w-full hover:cursor-pointer hover:scale-105
+                ${
+                    isPopular
+                        ? 'text-indigo-600 bg-white hover:bg-slate-50'
+                        : 'text-white bg-slate-600 hover:bg-slate-500'
+                }`}
             >
                 {type === 'base' ? 'Downgrade' : 'Upgrade'}
             </button>
