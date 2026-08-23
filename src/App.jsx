@@ -1,5 +1,11 @@
+import TemperaturePractice from './components/TemperaturePractice';
+
 function App() {
-    return <></>;
+    return (
+        <>
+            <TemperaturePractice />
+        </>
+    );
 }
 
 export default App;
