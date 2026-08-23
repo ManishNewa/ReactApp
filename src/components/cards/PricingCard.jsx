@@ -20,7 +20,7 @@ export default function PricingCard({ features, type, amount, isPopular }) {
                 </div>
                 <div className="text-2xl font-semibold">{type}</div>
             </div>
-            <p className="text-slate-400 text-sm mb-6">
+            <p className="text-slate-300 text-sm mb-6">
                 For most businesses that want to optimize web queries
             </p>
             <ul className="flex-1 mb-8 space-y-3">
@@ -39,7 +39,7 @@ export default function PricingCard({ features, type, amount, isPopular }) {
                                 />
                             </svg>
                         </div>
-                        <span className="text-md font-medium text-slate-400">
+                        <span className="text-md font-medium text-slate-300">
                             {feature}
                         </span>
                     </li>
