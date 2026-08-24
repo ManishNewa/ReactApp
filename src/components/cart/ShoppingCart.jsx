@@ -46,11 +46,11 @@ export default function ShoppingCart() {
                             {/* <div>
                                 <input type="text"></input>
                             </div> */}
-                            <div>
-                                <SummaryItem label="sub amount"/>
-                                <SummaryItem label="discount (10%)"/>
-                                <SummaryItem label="delivery fee"/>
-                                <SummaryItem label="total"/>
+                            <div className="flex flex-col gap-3">
+                                <SummaryItem label="sub amount" />
+                                <SummaryItem label="discount (10%)" />
+                                <SummaryItem label="delivery fee" />
+                                <SummaryItem className="mt-2" label="total" />
                             </div>
                         </div>
                     </div>
