@@ -45,7 +45,7 @@ export default function CartItem({ item, onQuantityChange, onItemDelete }) {
                 </div>
             </td>
 
-            <td>{price * quantity}</td>
+            <td>{(price * quantity)?.toFixed(2)}</td>
 
             <td>
                 <button
