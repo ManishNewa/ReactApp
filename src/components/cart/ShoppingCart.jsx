@@ -7,6 +7,10 @@ import SummaryItem from './SummaryItem';
 export default function ShoppingCart() {
     const [items, setCartItems] = useState(cartItems);
 
+    const subTotalAmount = items.reduce((total, item) => {
+        return total + item.price * item.quantity;
+    }, 0);
+
     function handleQuantityChange(id, amount) {
         const updatedItems = items.map((item) => {
             if (item.id === id && item.quantity >= 0) {
@@ -67,7 +71,10 @@ export default function ShoppingCart() {
                                 <input type="text"></input>
                             </div> */}
                             <div className="flex flex-col gap-3">
-                                <SummaryItem label="sub amount" />
+                                <SummaryItem
+                                    label="sub amount"
+                                    amount={subTotalAmount}
+                                />
                                 <SummaryItem label="discount (10%)" />
                                 <SummaryItem label="delivery fee" />
                                 <SummaryItem className="mt-2" label="total" />
