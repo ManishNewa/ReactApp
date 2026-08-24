@@ -8,7 +8,13 @@ export default function ShoppingCart() {
     const [items, setCartItems] = useState(cartItems);
 
     function handleQuantityChange(id, amount) {
-        console.log(id, amount);
+        const updatedItems = items.map((item) => {
+            if (item.id === id && item.quantity >= 0) {
+                item.quantity += amount;
+            }
+            return item;
+        });
+        setCartItems(updatedItems);
     }
     return (
         <main className="min-h-screen">
