@@ -1,3 +1,5 @@
+import { cartItems } from '../../data/ShoppingCartData';
+
 export default function ShoppingCart() {
-    return 'Hello everyone';
+    return <>{cartItems}</>;
 }
