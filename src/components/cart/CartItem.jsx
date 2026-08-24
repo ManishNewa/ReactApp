@@ -48,7 +48,17 @@ export default function CartItem({ item, onQuantityChange, onItemDelete }) {
             <td>{price * quantity}</td>
 
             <td>
-                <button onClick={() => onItemDelete(id)}>
+                <button
+                    onClick={() => {
+                        if (
+                            window.confirm(
+                                'Are you sure you want to remove this item?',
+                            )
+                        ) {
+                            onItemDelete(id);
+                        }
+                    }}
+                >
                     <Trashbin className="w-5 h-5 text-red-500 hover:scale-110 hover:cursor-pointer" />
                 </button>
             </td>
