@@ -7,6 +7,9 @@ import SummaryItem from './SummaryItem';
 export default function ShoppingCart() {
     const [items, setCartItems] = useState(cartItems);
 
+    function handleQuantityChange(id, amount) {
+        console.log(id, amount);
+    }
     return (
         <main className="min-h-screen">
             <div className="max-w-6xl mx-auto">
@@ -33,7 +36,11 @@ export default function ShoppingCart() {
 
                             <tbody>
                                 {items.map((item) => (
-                                    <CartItem key={item.id} {...item} />
+                                    <CartItem
+                                        key={item.id}
+                                        item={item}
+                                        onQuantityChange={handleQuantityChange}
+                                    />
                                 ))}
                             </tbody>
                         </table>

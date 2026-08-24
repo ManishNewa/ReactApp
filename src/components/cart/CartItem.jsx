@@ -1,4 +1,6 @@
-export default function CartItem({ title, subtitle, price, quantity, image }) {
+export default function CartItem({ item, onQuantityChange }) {
+    const { id, title, image, subtitle, price, quantity } = item;
+
     return (
         <tr>
             <td className="py-3">
@@ -23,13 +25,19 @@ export default function CartItem({ title, subtitle, price, quantity, image }) {
 
             <td>
                 <div className="flex items-center gap-2">
-                    <button className="w-8 h-8 border flex items-center justify-center hover:cursor-pointer hover:scale-105">
+                    <button
+                        onClick={() => onQuantityChange(id, -1)}
+                        className="w-8 h-8 border flex items-center justify-center hover:cursor-pointer hover:scale-105"
+                    >
                         -
                     </button>
 
                     <span className="w-8 text-center">{quantity}</span>
 
-                    <button className="w-8 h-8 border flex items-center justify-center hover:cursor-pointer hover:scale-105">
+                    <button
+                        onClick={() => onQuantityChange(id, -1)}
+                        className="w-8 h-8 border flex items-center justify-center hover:cursor-pointer hover:scale-105"
+                    >
                         +
                     </button>
                 </div>
