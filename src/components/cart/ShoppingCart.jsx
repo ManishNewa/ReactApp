@@ -18,7 +18,7 @@ export default function ShoppingCart() {
                             <thead>
                                 <tr className="text-sm font-semibold">
                                     <th className="text-left pb-6">Product</th>
-                                    <th className="w-30 text-left pb-6">
+                                    <th className="w-40 text-left pb-6">
                                         Quantity
                                     </th>
                                     <th className="w-20 text-left pb-6">
