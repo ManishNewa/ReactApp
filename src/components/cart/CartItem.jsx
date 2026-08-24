@@ -1,6 +1,6 @@
 import Trashbin from '../icons/Trashbin';
 
-export default function CartItem({ item, onQuantityChange }) {
+export default function CartItem({ item, onQuantityChange, onItemDelete }) {
     const { id, title, image, subtitle, price, quantity } = item;
 
     return (
@@ -48,7 +48,7 @@ export default function CartItem({ item, onQuantityChange }) {
             <td>{price * quantity}</td>
 
             <td>
-                <button>
+                <button onClick={() => onItemDelete(id)}>
                     <Trashbin className="w-5 h-5 text-red-500 hover:scale-110 hover:cursor-pointer" />
                 </button>
             </td>

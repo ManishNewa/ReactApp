@@ -16,6 +16,12 @@ export default function ShoppingCart() {
         });
         setCartItems(updatedItems);
     }
+
+    function handleItemDeletion(id) {
+        const updatedItems = items.filter((item) => item.id !== id);
+        setCartItems(updatedItems);
+    }
+
     return (
         <main className="min-h-screen">
             <div className="max-w-6xl mx-auto">
@@ -46,6 +52,7 @@ export default function ShoppingCart() {
                                         key={item.id}
                                         item={item}
                                         onQuantityChange={handleQuantityChange}
+                                        onItemDelete={handleItemDeletion}
                                     />
                                 ))}
                             </tbody>
