@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { cartItems } from '../../data/ShoppingCartData';
 
 import CartItem from './CartItem';
+import SummaryItem from './SummaryItem';
 
 export default function ShoppingCart() {
     const [items, setCartItems] = useState(cartItems);
@@ -37,7 +38,22 @@ export default function ShoppingCart() {
                             </tbody>
                         </table>
                     </div>
-                    <div className="w-95">Right</div>
+                    <div className="w-95">
+                        <div>
+                            <h2 className="text-lg font-semibold text-gray-900 mb-6">
+                                Order Summary
+                            </h2>
+                            {/* <div>
+                                <input type="text"></input>
+                            </div> */}
+                            <div>
+                                <SummaryItem label="sub amount"/>
+                                <SummaryItem label="discount (10%)"/>
+                                <SummaryItem label="delivery fee"/>
+                                <SummaryItem label="total"/>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </main>
