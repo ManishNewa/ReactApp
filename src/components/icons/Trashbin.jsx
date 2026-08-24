@@ -7,9 +7,6 @@ export default function Trashbin({ className }) {
             viewBox="0 0 24 24"
             fill="none"
             stroke="#000000"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
             className={className}
         >
             <path d="M3 6h18"></path>
