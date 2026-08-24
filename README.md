@@ -9,7 +9,7 @@ The purpose of this repository is to track my progress throughout the course and
 To run this project locally, switch to the corresponding branch first and install the required dependencies:
 
 ```bash
-git checkout task/tailwind-pricing-section
+git checkout main
 npm install
 npm run dev
 ```
