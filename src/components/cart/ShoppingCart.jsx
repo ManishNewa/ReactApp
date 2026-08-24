@@ -12,6 +12,8 @@ export default function ShoppingCart() {
     }, 0);
 
     const discountAmount = subTotalAmount * 0.1;
+    // Assuming delivery fee is 1%
+    const deliveryFee = subTotalAmount * 0.01;
 
     function handleQuantityChange(id, amount) {
         const updatedItems = items.map((item) => {
@@ -75,19 +77,22 @@ export default function ShoppingCart() {
                             <div className="flex flex-col gap-3">
                                 <SummaryItem
                                     label="sub amount"
-                                    amount={subTotalAmount.toFixed(2)}
+                                    amount={subTotalAmount}
                                 />
                                 <SummaryItem
                                     label="discount (10%)"
-                                    amount={discountAmount.toFixed(2)}
+                                    amount={discountAmount}
                                 />
-                                <SummaryItem label="delivery fee" />
+                                <SummaryItem
+                                    label="delivery fee"
+                                    amount={deliveryFee}
+                                />
                                 <SummaryItem className="mt-2" label="total" />
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>  
         </main>
     );
 }
