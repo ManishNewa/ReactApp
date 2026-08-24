@@ -14,6 +14,7 @@ export default function ShoppingCart() {
     const discountAmount = subTotalAmount * 0.1;
     // Assuming delivery fee is 1%
     const deliveryFee = subTotalAmount * 0.01;
+    const totalAmount = subTotalAmount - discountAmount + deliveryFee;
 
     function handleQuantityChange(id, amount) {
         const updatedItems = items.map((item) => {
@@ -87,12 +88,16 @@ export default function ShoppingCart() {
                                     label="delivery fee"
                                     amount={deliveryFee}
                                 />
-                                <SummaryItem className="mt-2" label="total" />
+                                <SummaryItem
+                                    className="mt-2"
+                                    label="total"
+                                    amount={totalAmount}
+                                />
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>  
+            </div>
         </main>
     );
 }
