@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { cartItems } from '../../data/ShoppingCartData';
 
+import CartItem from './CartItem';
+
 export default function ShoppingCart() {
     const [items, setCartItems] = useState(cartItems);
 
@@ -12,13 +14,28 @@ export default function ShoppingCart() {
                 </h1>
                 <div className="flex gap-8">
                     <div className="w-full border border-gray-300 rounded-xl p-4">
-                        <div className="flex text-sm font-semibold pb-6">
-                            <div className="flex-1">Product</div>
-                            <div className="w-30">Quantity</div>
-                            <div className="w-20">Total</div>
-                            <div className="w-10">Action</div>
-                        </div>
-                        <div>Here car items will appear</div>
+                        <table className="w-full">
+                            <thead>
+                                <tr className="text-sm font-semibold">
+                                    <th className="text-left pb-6">Product</th>
+                                    <th className="w-30 text-left pb-6">
+                                        Quantity
+                                    </th>
+                                    <th className="w-20 text-left pb-6">
+                                        Total
+                                    </th>
+                                    <th className="w-10 text-left pb-6">
+                                        Action
+                                    </th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                {items.map((item) => (
+                                    <CartItem key={item.id} {...item} />
+                                ))}
+                            </tbody>
+                        </table>
                     </div>
                     <div className="w-95">Right</div>
                 </div>
