@@ -35,7 +35,7 @@ export default function CartItem({ item, onQuantityChange }) {
                     <span className="w-8 text-center">{quantity}</span>
 
                     <button
-                        onClick={() => onQuantityChange(id, -1)}
+                        onClick={() => onQuantityChange(id, 1)}
                         className="w-8 h-8 border flex items-center justify-center hover:cursor-pointer hover:scale-105"
                     >
                         +
