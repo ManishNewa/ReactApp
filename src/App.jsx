@@ -1,6 +1,7 @@
+import ShoppingCart from './components/cart/ShoppingCart';
+
 function App() {
-    return (
-    )
+    return <ShoppingCart />;
 }
 
 export default App;
