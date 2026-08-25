@@ -13,7 +13,7 @@ export default function ShoppingCart() {
         return total + item.price * item.quantity;
     }, 0);
 
-    const discountAmount = (subTotalAmount * discountPercent) / 100;
+    const discountAmount = (discountPercent / 100) * subTotalAmount;
     // Assuming delivery fee is 1%
     const deliveryFee = subTotalAmount * 0.01;
     const totalAmount = subTotalAmount - discountAmount + deliveryFee;
