@@ -4,6 +4,8 @@ import { cartItems } from '../../data/ShoppingCartData';
 import CartItem from './CartItem';
 import SummaryItem from './SummaryItem';
 
+const discountPercent = 10;
+
 export default function ShoppingCart() {
     const [items, setCartItems] = useState(cartItems);
 
@@ -11,7 +13,7 @@ export default function ShoppingCart() {
         return total + item.price * item.quantity;
     }, 0);
 
-    const discountAmount = subTotalAmount * 0.1;
+    const discountAmount = (subTotalAmount * discountPercent) / 100;
     // Assuming delivery fee is 1%
     const deliveryFee = subTotalAmount * 0.01;
     const totalAmount = subTotalAmount - discountAmount + deliveryFee;
