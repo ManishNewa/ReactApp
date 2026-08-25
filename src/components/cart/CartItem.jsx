@@ -2,6 +2,7 @@ import Trashbin from '../icons/Trashbin';
 
 export default function CartItem({ item, onQuantityChange, onItemDelete }) {
     const { id, title, image, subtitle, price, quantity } = item;
+    const hasMinQuantity = item.quantity <= 1;
 
     return (
         <tr>
@@ -28,8 +29,13 @@ export default function CartItem({ item, onQuantityChange, onItemDelete }) {
             <td>
                 <div className="flex items-center gap-2">
                     <button
+                        disabled={hasMinQuantity}
                         onClick={() => onQuantityChange(id, -1)}
-                        className="w-8 h-8 border flex items-center justify-center hover:cursor-pointer hover:scale-105"
+                        className={`w-8 h-8 border flex items-center justify-center ${
+                            hasMinQuantity
+                                ? 'disabled:opacity-50'
+                                : 'hover:cursor-pointer hover:scale-105'
+                        }`}
                     >
                         -
                     </button>
