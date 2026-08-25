@@ -56,18 +56,20 @@ export default function ShoppingCart() {
                             </thead>
 
                             <tbody>
-                                {items.length
-                                    ? items.map((item) => (
-                                          <CartItem
-                                              key={item.id}
-                                              item={item}
-                                              onQuantityChange={
-                                                  handleQuantityChange
-                                              }
-                                              onItemDelete={handleItemDeletion}
-                                          />
-                                      ))
-                                    : 'Your cart list is empty'}
+                                {items.length ? (
+                                    items.map((item) => (
+                                        <CartItem
+                                            key={item.id}
+                                            item={item}
+                                            onQuantityChange={
+                                                handleQuantityChange
+                                            }
+                                            onItemDelete={handleItemDeletion}
+                                        />
+                                    ))
+                                ) : (
+                                    <p>Your cart list is empty</p>
+                                )}
                             </tbody>
                         </table>
                     </div>
