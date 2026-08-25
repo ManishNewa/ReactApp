@@ -5,6 +5,7 @@ import CartItem from './CartItem';
 import SummaryItem from './SummaryItem';
 
 const discountPercent = 10;
+const deliveryFee = 100;
 
 export default function ShoppingCart() {
     const [items, setCartItems] = useState(cartItems);
@@ -12,10 +13,7 @@ export default function ShoppingCart() {
     const subTotalAmount = items.reduce((total, item) => {
         return total + item.price * item.quantity;
     }, 0);
-
     const discountAmount = (discountPercent / 100) * subTotalAmount;
-    // Assuming delivery fee is 1%
-    const deliveryFee = subTotalAmount * 0.01;
     const totalAmount = subTotalAmount - discountAmount + deliveryFee;
 
     function handleQuantityChange(id, amount) {
