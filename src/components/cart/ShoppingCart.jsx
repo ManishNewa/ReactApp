@@ -33,7 +33,7 @@ export default function ShoppingCart() {
 
     return (
         <main className="min-h-screen">
-            <div className="max-w-6xl mx-auto">
+            <div className="max-w-6xl mx-auto mt-15">
                 <h1 className="text-4xl font-bold mb-12 text-gray-900">
                     Shopping Cart
                 </h1>
