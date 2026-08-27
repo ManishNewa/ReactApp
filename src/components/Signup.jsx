@@ -42,8 +42,14 @@ function Signup() {
         e.preventDefault();
 
         setSubmitted(true);
+        
+        const valid = checkValidations();
 
-        setValidationState(checkValidations());
+        setValidationState(valid);
+
+        if (valid) {
+            setSubmitted(false);
+        }
     }
 
     return (
