@@ -74,7 +74,7 @@ export default function ShoppingCart() {
                         </table>
                     </div>
                     <div className="w-95">
-                        <div>
+                        <div className="border border-gray-300 rounded-3xl p-6">
                             <h2 className="text-lg font-semibold text-gray-900 mb-6">
                                 Order Summary
                             </h2>
