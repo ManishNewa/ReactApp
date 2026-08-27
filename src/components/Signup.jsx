@@ -43,9 +43,7 @@ function Signup() {
 
         setSubmitted(true);
 
-        const valid = checkValidations();
-
-        setValidationState(valid);
+        setValidationState(checkValidations());
     }
 
     return (
