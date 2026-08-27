@@ -4,11 +4,20 @@ import SummaryItem from './SummaryItem';
 
 const discountPercent = 10;
 const deliveryFee = 100;
+const validVouchers = [
+    { key: 'DISCOUNT20', value: 20 },
+    { key: 'DISCOUNT30', value: 30 },
+    { key: 'DISCOUNT40', value: 40 },
+    { key: 'DISCOUNT50', value: 50 },
+];
 
 export default function SummarySection({ subTotalAmount, className }) {
     const discountAmount = (discountPercent / 100) * subTotalAmount;
     const totalAmount = subTotalAmount - discountAmount + deliveryFee;
 
+    function handleVoucher(voucher) {
+        console.log('Voucher applied', voucher);
+    }
     return (
         <div className={className}>
             <div className="border border-gray-300 rounded-3xl p-6">
@@ -16,8 +25,8 @@ export default function SummarySection({ subTotalAmount, className }) {
                     Order Summary
                 </h2>
 
-                <DiscountVoucher />
-                
+                <DiscountVoucher voucherApplied={handleVoucher} />
+
                 <div className="flex flex-col gap-3 my-6">
                     <SummaryItem label="sub amount" amount={subTotalAmount} />
                     <SummaryItem
