@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { ShieldIcon } from '../icons/Icons';
 import { cartItems } from '../../data/ShoppingCartData';
 
 import CartItem from './CartItem';
@@ -84,7 +85,7 @@ export default function ShoppingCart() {
                                     placeholder="Discount Voucher"
                                     className="border rounded-full focus:outline-gray-500 px-3 border-gray-200"
                                 />
-                                <button className="border border-gray-200 px-6 py-2 rounded-full font-semibold text-sm">
+                                <button className="border border-gray-200 px-6 py-2 rounded-full font-semibold text-sm hover:cursor-pointer hover:scale-105">
                                     Apply
                                 </button>
                             </div>
@@ -107,6 +108,24 @@ export default function ShoppingCart() {
                                     amount={totalAmount}
                                 />
                             </div>
+                            <div className="flex items-start gap-3 mb-6 bg-gray-50/50 p-2 rounded-xl text-xs text-gray-600">
+                                <div className="shrink-0 mt-0.5 text-gray-400">
+                                    <ShieldIcon />
+                                </div>
+                                <p>
+                                    90 Day Limited Warranty against
+                                    manufacturer's defects{' '}
+                                    <a
+                                        href="#"
+                                        className="font-semibold underline decoration-gray-300 hover:text-black"
+                                    >
+                                        Details
+                                    </a>
+                                </p>
+                            </div>
+                            <button className="rounded-full px-6 py-3 w-full bg-gray-900 text-white text-lg font-semibold">
+                                Checkout Now
+                            </button>
                         </div>
                     </div>
                 </div>
