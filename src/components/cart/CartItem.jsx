@@ -27,7 +27,7 @@ export default function CartItem({ item, onQuantityChange, onItemDelete }) {
             </td>
 
             <td>
-                <div className="flex items-center gap-2">
+                <div className="inline-flex items-center justify-center gap-5 rounded-full border border-gray-200 px-3 py-1">
                     <button
                         disabled={hasMinQuantity}
                         onClick={() => onQuantityChange(id, -1)}
