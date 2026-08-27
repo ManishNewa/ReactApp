@@ -123,7 +123,7 @@ export default function ShoppingCart() {
                                     </a>
                                 </p>
                             </div>
-                            <button className="rounded-full px-6 py-3 w-full bg-gray-900 text-white text-lg font-semibold">
+                            <button className="rounded-full px-6 py-3 w-full bg-gray-900 text-white text-lg font-semibold hover:cursor-pointer hover:scale-105">
                                 Checkout Now
                             </button>
                         </div>
