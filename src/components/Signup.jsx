@@ -10,8 +10,8 @@ function Signup() {
         password: '',
         confirmPassword: '',
     });
-
-    const formHasEmptyValue = Object.values(form).some((value) => value === '');
+    const [submitted, setSubmitted] = useState(false);
+    const [validationSuccess, setValidationState] = useState(false);
 
     function updateForm(formKey, value) {
         const updatedFormData = {
@@ -21,12 +21,28 @@ function Signup() {
         setFormData(updatedFormData);
     }
 
-    function handleFormSubmit() {
-        // check form validations
-        // check empty strings
-        if (formHasEmptyValue) {
-            return;
+    function checkValidations() {
+        // Check password
+        if (!passwordPattern.test(form.password)) {
+            return false;
         }
+
+        // Check passwords match
+        if (form.password !== form.confirmPassword) {
+            return false;
+        }
+
+        return true;
+    }
+
+    function handleFormSubmit(e) {
+        e.preventDefault();
+
+        setSubmitted(true);
+
+        const valid = checkValidations();
+
+        setValidationState(valid);
     }
 
     return (
@@ -132,15 +148,18 @@ function Signup() {
                     <button
                         className="w-full rounded-lg bg-stone-900 px-4 py-3 text-sm font-semibold text-white transition hover:bg-stone-700 focus:outline-none focus:ring-2 focus:ring-stone-400 focus:ring-offset-2"
                         type="submit"
-                        onClick={() => e.preventDefault()}
                     >
                         Create account
                     </button>
                 </form>
 
-                <p className="mt-5 rounded-lg bg-emerald-50 px-3 py-2 text-center text-sm text-emerald-800">
-                    Account created for "here name".
-                </p>
+                {submitted && (
+                    <p className="mt-5 rounded-lg bg-emerald-50 px-3 py-2 text-center text-sm text-emerald-800">
+                        {validationSuccess
+                            ? `Account created for ${form.name}.`
+                            : 'Validation Failed'}
+                    </p>
+                )}
             </section>
         </main>
     );
