@@ -3,6 +3,7 @@ import { useState } from 'react';
 import InputText from './inputs/InputText';
 import BaseButton from './buttons/BaseButton';
 import { checkValidations } from '../../FormValidations';
+import MessageBox from './common/MessageBox';
 
 function Signup() {
     const [form, setFormData] = useState({
@@ -94,11 +95,11 @@ function Signup() {
                 </form>
 
                 {submitted && (
-                    <p className="mt-5 rounded-lg bg-emerald-50 px-3 py-2 text-center text-sm text-emerald-800">
+                    <MessageBox>
                         {validation.valid
                             ? `Account created for ${form.name}.`
                             : validation.message}
-                    </p>
+                    </MessageBox>
                 )}
             </section>
         </main>
