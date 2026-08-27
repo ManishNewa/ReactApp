@@ -16,7 +16,7 @@ npm run dev
 
 ## 📚 Task 4 - Shopping Cart
 
-**Branch:** [task/ShoppingCart](https://github.com/ManishNewa/ReactApp/edit/task/ShoppingCart)
+**Branch:** [task/ShoppingCart](https://github.com/ManishNewa/ReactApp/tree/task/ShoppingCart)
 
 This task involves creating a **shopping cart UI** with item management, pricing calculations, discounts, shipping fees, and voucher functionality.
 
