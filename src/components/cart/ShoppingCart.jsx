@@ -102,7 +102,7 @@ export default function ShoppingCart() {
                                     amount={deliveryFee}
                                 />
                                 <SummaryItem
-                                    className="mt-2"
+                                    className="border-t border-gray-200 pt-4 mt-3 font-bold text-lg"
                                     label="total"
                                     amount={totalAmount}
                                 />
