@@ -1,8 +1,9 @@
+import { useState } from 'react';
+
 import { ShieldIcon } from '../icons/Icons';
 import DiscountVoucher from './DiscountVoucher';
 import SummaryItem from './SummaryItem';
 
-const discountPercent = 10;
 const deliveryFee = 100;
 const validVouchers = [
     { key: 'DISCOUNT20', value: 20 },
@@ -12,15 +13,20 @@ const validVouchers = [
 ];
 
 export default function SummarySection({ subTotalAmount, className }) {
+    const [discountPercent, setDiscountPercent] = useState(10);
+    
     const discountAmount = (discountPercent / 100) * subTotalAmount;
     const totalAmount = subTotalAmount - discountAmount + deliveryFee;
 
-    function handleVoucher(voucher) {
+    function handleVoucher(voucherKey) {
         const validVoucherKeys = validVouchers.map((voucher) => voucher.key);
-        if (validVoucherKeys.includes(voucher)) {
-            console.log('Voucher applied', voucher);
-        }else{
-            alert('Invalid voucher coupon')
+        if (validVoucherKeys.includes(voucherKey)) {
+            const voucher = validVouchers.find(
+                (validVoucher) => validVoucher.key === voucherKey,
+            );
+            setDiscountPercent(voucher.value);
+        } else {
+            alert('Invalid voucher coupon');
         }
     }
     return (
@@ -35,7 +41,7 @@ export default function SummarySection({ subTotalAmount, className }) {
                 <div className="flex flex-col gap-3 my-6">
                     <SummaryItem label="sub amount" amount={subTotalAmount} />
                     <SummaryItem
-                        label="discount (10%)"
+                        label={`discount (${discountPercent}%)`}
                         amount={discountAmount}
                     />
                     <SummaryItem label="delivery fee" amount={deliveryFee} />
