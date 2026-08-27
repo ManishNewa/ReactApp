@@ -1,5 +1,9 @@
+import Signup from "./components/Signup";
+
 function App() {
-    return <></>;
+    return <>
+        <Signup/>>
+    </>;
 }
 
 export default App;
