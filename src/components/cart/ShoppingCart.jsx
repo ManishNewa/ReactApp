@@ -40,7 +40,7 @@ export default function ShoppingCart() {
                 <div className="flex gap-8">
                     <div className="w-full border border-gray-300 rounded-xl p-4">
                         <table className="w-full">
-                            <thead>
+                            <thead className='border-b border-gray-100'>
                                 <tr className="text-sm font-semibold">
                                     <th className="text-left pb-6">Product</th>
                                     <th className="w-40 text-left pb-6">
