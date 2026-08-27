@@ -40,7 +40,7 @@ export default function ShoppingCart() {
                 <div className="flex gap-8">
                     <div className="w-full border border-gray-300 rounded-xl p-4">
                         <table className="w-full">
-                            <thead className='border-b border-gray-100'>
+                            <thead className="border-b border-gray-100">
                                 <tr className="text-sm font-semibold">
                                     <th className="text-left pb-6">Product</th>
                                     <th className="w-40 text-left pb-6">
@@ -78,10 +78,17 @@ export default function ShoppingCart() {
                             <h2 className="text-lg font-semibold text-gray-900 mb-6">
                                 Order Summary
                             </h2>
-                            {/* <div>
-                                <input type="text"></input>
-                            </div> */}
-                            <div className="flex flex-col gap-3">
+                            <div className="flex gap-3">
+                                <input
+                                    type="text"
+                                    placeholder="Discount Voucher"
+                                    className="border rounded-full focus:outline-gray-500 px-3 border-gray-200"
+                                />
+                                <button className="border border-gray-200 px-6 py-2 rounded-full font-semibold text-sm">
+                                    Apply
+                                </button>
+                            </div>
+                            <div className="flex flex-col gap-3 my-6">
                                 <SummaryItem
                                     label="sub amount"
                                     amount={subTotalAmount}
