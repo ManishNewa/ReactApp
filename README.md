@@ -86,7 +86,7 @@ https://github.com/user-attachments/assets/a7a813f6-07d5-4414-9102-c0a727f737e1
 
 ### Task 4 - Shopping Cart
 
-**Branch:** [task/ShoppingCart](https://github.com/ManishNewa/ReactApp/edit/task/ShoppingCart)
+**Branch:** [task/ShoppingCart](https://github.com/ManishNewa/ReactApp/tree/task/ShoppingCart)
 
 This task involves creating a **shopping cart UI** with item management, pricing calculations, discounts, shipping fees, and voucher functionality.
 
