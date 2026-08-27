@@ -1,4 +1,5 @@
 import { ShieldIcon } from '../icons/Icons';
+import DiscountVoucher from './DiscountVoucher';
 import SummaryItem from './SummaryItem';
 
 const discountPercent = 10;
@@ -14,16 +15,9 @@ export default function SummarySection({ subTotalAmount, className }) {
                 <h2 className="text-lg font-semibold text-gray-900 mb-6">
                     Order Summary
                 </h2>
-                <div className="flex gap-3">
-                    <input
-                        type="text"
-                        placeholder="Discount Voucher"
-                        className="border rounded-full focus:outline-gray-500 px-3 border-gray-200"
-                    />
-                    <button className="border border-gray-200 px-6 py-2 rounded-full font-semibold text-sm hover:cursor-pointer hover:scale-105">
-                        Apply
-                    </button>
-                </div>
+
+                <DiscountVoucher />
+                
                 <div className="flex flex-col gap-3 my-6">
                     <SummaryItem label="sub amount" amount={subTotalAmount} />
                     <SummaryItem
