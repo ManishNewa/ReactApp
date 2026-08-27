@@ -11,12 +11,22 @@ function Signup() {
         confirmPassword: '',
     });
 
+    const formHasEmptyValue = Object.values(form).some((value) => value === '');
+
     function updateForm(formKey, value) {
         const updatedFormData = {
             ...form,
             [formKey]: value,
         };
         setFormData(updatedFormData);
+    }
+
+    function handleFormSubmit() {
+        // check form validations
+        // check empty strings
+        if (formHasEmptyValue) {
+            return;
+        }
     }
 
     return (
@@ -34,7 +44,7 @@ function Signup() {
                     </p>
                 </div>
 
-                <form className="space-y-5">
+                <form className="space-y-5" onSubmit={handleFormSubmit}>
                     <div>
                         <label
                             className="mb-2 block text-sm font-medium"
@@ -122,6 +132,7 @@ function Signup() {
                     <button
                         className="w-full rounded-lg bg-stone-900 px-4 py-3 text-sm font-semibold text-white transition hover:bg-stone-700 focus:outline-none focus:ring-2 focus:ring-stone-400 focus:ring-offset-2"
                         type="submit"
+                        onClick={() => e.preventDefault()}
                     >
                         Create account
                     </button>
