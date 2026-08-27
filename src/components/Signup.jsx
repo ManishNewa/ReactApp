@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 // Pass length: min 8, charc, symbol, number
+const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[^A-Za-z\d]).{8,}$/;
 
 function Signup() {
     const [form, setFormData] = useState({
