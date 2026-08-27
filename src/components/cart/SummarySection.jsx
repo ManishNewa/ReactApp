@@ -4,7 +4,7 @@ import SummaryItem from './SummaryItem';
 const discountPercent = 10;
 const deliveryFee = 100;
 
-export default function Summary({ subTotalAmount, className }) {
+export default function SummarySection({ subTotalAmount, className }) {
     const discountAmount = (discountPercent / 100) * subTotalAmount;
     const totalAmount = subTotalAmount - discountAmount + deliveryFee;
 
