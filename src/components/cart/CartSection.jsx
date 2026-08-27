@@ -3,7 +3,7 @@ import CartItem from './CartItem';
 export default function CartSection({ items, setCartItems, className }) {
     function handleQuantityChange(id, amount) {
         const updatedItems = items.map((item) => {
-            if (item.id === id && item.quantity >= 0) {
+            if (item.id === id) {
                 item.quantity += amount;
             }
             return item;

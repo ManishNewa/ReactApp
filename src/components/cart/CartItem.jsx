@@ -3,6 +3,14 @@ import { MinusIcon, PlusIcon, TrashIcon } from '../icons/Icons';
 export default function CartItem({ item, onQuantityChange, onItemDelete }) {
     const { id, title, image, subtitle, price, quantity } = item;
 
+    function handleQuantityChange(id, quantity) {
+        if (item.quantity === 1 && quantity == -1) {
+            onItemDelete(id);
+        } else {
+            onQuantityChange(id, quantity);
+        }
+    }
+
     return (
         <tr>
             <td className="py-3">
@@ -28,7 +36,7 @@ export default function CartItem({ item, onQuantityChange, onItemDelete }) {
             <td>
                 <div className="inline-flex items-center justify-center gap-5 rounded-full border border-gray-200 px-3 py-1">
                     <button
-                        onClick={() => onQuantityChange(id, -1)}
+                        onClick={() => handleQuantityChange(id, -1)}
                         className="hover:cursor-pointer hover:scale-105"
                     >
                         <MinusIcon />
