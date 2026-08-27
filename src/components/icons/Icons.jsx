@@ -1,4 +1,4 @@
-const MinusIcon = () => (
+export const MinusIcon = () => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         width="14"
@@ -14,7 +14,7 @@ const MinusIcon = () => (
     </svg>
 );
 
-const PlusIcon = () => (
+export const PlusIcon = () => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         width="14"
@@ -31,7 +31,7 @@ const PlusIcon = () => (
     </svg>
 );
 
-const TrashIcon = () => (
+export const TrashIcon = () => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         width="18"
@@ -50,7 +50,7 @@ const TrashIcon = () => (
     </svg>
 );
 
-const ShieldIcon = () => (
+export const ShieldIcon = () => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         width="16"
