@@ -30,6 +30,11 @@ export default function SummarySection({ subTotalAmount, className }) {
             alert('Invalid voucher coupon');
         }
     }
+
+    function removeVoucher() {
+        setDiscountPercent(10);
+    }
+
     return (
         <div className={className}>
             <div className="border border-gray-300 rounded-3xl p-6">
@@ -45,6 +50,7 @@ export default function SummarySection({ subTotalAmount, className }) {
                         label={`discount (${discountPercent}%)`}
                         amount={discountAmount}
                         isVoucherAdded={isVoucherAdded}
+                        onVoucherRemove={removeVoucher}
                     />
                     <SummaryItem label="delivery fee" amount={deliveryFee} />
                     <SummaryItem

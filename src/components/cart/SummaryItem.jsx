@@ -3,7 +3,7 @@ export default function SummaryItem({
     label,
     amount,
     isVoucherAdded,
-    onRemove,
+    onVoucherRemove,
 }) {
     return (
         <div
@@ -20,7 +20,7 @@ export default function SummaryItem({
 
                             <button
                                 type="button"
-                                onClick={onRemove}
+                                onClick={onVoucherRemove}
                                 className="text-gray-500 hover:text-gray-900 underline"
                             >
                                 Remove
