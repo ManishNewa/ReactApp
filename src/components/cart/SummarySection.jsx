@@ -14,9 +14,10 @@ const validVouchers = [
 
 export default function SummarySection({ subTotalAmount, className }) {
     const [discountPercent, setDiscountPercent] = useState(10);
-    
+
     const discountAmount = (discountPercent / 100) * subTotalAmount;
     const totalAmount = subTotalAmount - discountAmount + deliveryFee;
+    const isVoucherAdded = discountPercent > 10;
 
     function handleVoucher(voucherKey) {
         const validVoucherKeys = validVouchers.map((voucher) => voucher.key);
@@ -43,6 +44,7 @@ export default function SummarySection({ subTotalAmount, className }) {
                     <SummaryItem
                         label={`discount (${discountPercent}%)`}
                         amount={discountAmount}
+                        isVoucherAdded={isVoucherAdded}
                     />
                     <SummaryItem label="delivery fee" amount={deliveryFee} />
                     <SummaryItem
