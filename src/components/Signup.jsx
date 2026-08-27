@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+import InputText from './input/InputText';
+
 // Pass length: min 8, charc, symbol, number
 const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[^A-Za-z\d]).{8,}$/;
 
@@ -61,90 +63,45 @@ function Signup() {
                 </div>
 
                 <form className="space-y-5" onSubmit={handleFormSubmit}>
-                    <div>
-                        <label
-                            className="mb-2 block text-sm font-medium"
-                            htmlFor="name"
-                        >
-                            Name
-                        </label>
-                        <input
-                            className="w-full rounded-lg border border-stone-300 px-3 py-2.5 text-sm outline-none transition placeholder:text-stone-400 focus:border-amber-600 focus:ring-2 focus:ring-amber-100"
-                            id="name"
-                            name="name"
-                            placeholder="Alex Morgan"
-                            required
-                            type="text"
-                            value={form.name}
-                            onChange={(e) => {
-                                updateForm('name', e.target.value);
-                            }}
-                        />
-                    </div>
+                    <InputText
+                        name="name"
+                        label="Name"
+                        placeholder="Alex Morgan"
+                        required={true}
+                        type="text"
+                        value={form.name}
+                        updateForm={updateForm}
+                    />
 
-                    <div>
-                        <label
-                            className="mb-2 block text-sm font-medium"
-                            htmlFor="signup-email"
-                        >
-                            Email
-                        </label>
-                        <input
-                            className="w-full rounded-lg border border-stone-300 px-3 py-2.5 text-sm outline-none transition placeholder:text-stone-400 focus:border-amber-600 focus:ring-2 focus:ring-amber-100"
-                            id="signup-email"
-                            name="email"
-                            placeholder="you@example.com"
-                            required
-                            type="email"
-                            value={form.email}
-                            onChange={(e) => {
-                                updateForm('email', e.target.value);
-                            }}
-                        />
-                    </div>
+                    <InputText
+                        name="email"
+                        label="Email"
+                        placeholder="you@example.com"
+                        required={true}
+                        type="email"
+                        value={form.email}
+                        updateForm={updateForm}
+                    />
 
-                    <div>
-                        <label
-                            className="mb-2 block text-sm font-medium"
-                            htmlFor="signup-password"
-                        >
-                            Password
-                        </label>
-                        <input
-                            className="w-full rounded-lg border border-stone-300 px-3 py-2.5 text-sm outline-none transition placeholder:text-stone-400 focus:border-amber-600 focus:ring-2 focus:ring-amber-100"
-                            id="signup-password"
-                            name="password"
-                            placeholder="Create a password"
-                            required
-                            type="password"
-                            value={form.password}
-                            onChange={(e) => {
-                                updateForm('password', e.target.value);
-                            }}
-                        />
-                    </div>
+                    <InputText
+                        name="password"
+                        label="Password"
+                        placeholder="Create a password"
+                        required={true}
+                        type="password"
+                        value={form.password}
+                        updateForm={updateForm}
+                    />
 
-                    <div>
-                        <label
-                            className="mb-2 block text-sm font-medium"
-                            htmlFor="confirm-password"
-                        >
-                            Confirm password
-                        </label>
-                        <input
-                            className="w-full rounded-lg border border-stone-300 px-3 py-2.5 text-sm outline-none transition placeholder:text-stone-400 focus:border-amber-600 focus:ring-2 focus:ring-amber-100"
-                            id="confirm-password"
-                            name="confirmPassword"
-                            placeholder="Repeat your password"
-                            required
-                            type="password"
-                            value={form.confirmPassword}
-                            onChange={(e) => {
-                                updateForm('confirmPassword', e.target.value);
-                            }}
-                        />
-                    </div>
-
+                    <InputText
+                        name="confirmPassword"
+                        label="Confirm Password"
+                        placeholder="Repeat your password"
+                        required={true}
+                        type="password"
+                        value={form.confirmPassword}
+                        updateForm={updateForm}
+                    />
                     <button
                         className="w-full rounded-lg bg-stone-900 px-4 py-3 text-sm font-semibold text-white transition hover:bg-stone-700 focus:outline-none focus:ring-2 focus:ring-stone-400 focus:ring-offset-2"
                         type="submit"
