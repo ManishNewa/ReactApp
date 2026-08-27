@@ -2,9 +2,7 @@ import { useState } from 'react';
 
 import InputText from './inputs/InputText';
 import BaseButton from './buttons/BaseButton';
-
-// Pass length: min 8, charc, symbol, number
-const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[^A-Za-z\d]).{8,}$/;
+import { checkValidations } from '../../FormValidations';
 
 function Signup() {
     const [form, setFormData] = useState({
@@ -14,7 +12,10 @@ function Signup() {
         confirmPassword: '',
     });
     const [submitted, setSubmitted] = useState(false);
-    const [validationSuccess, setValidationState] = useState(false);
+    const [validation, setValidationState] = useState({
+        valid: false,
+        message: '',
+    });
 
     function updateForm(formKey, value) {
         const updatedFormData = {
@@ -24,32 +25,14 @@ function Signup() {
         setFormData(updatedFormData);
     }
 
-    function checkValidations() {
-        // Check password
-        if (!passwordPattern.test(form.password)) {
-            return false;
-        }
-
-        // Check passwords match
-        if (form.password !== form.confirmPassword) {
-            return false;
-        }
-
-        return true;
-    }
-
     function handleFormSubmit(e) {
         e.preventDefault();
 
         setSubmitted(true);
-        
-        const valid = checkValidations();
 
-        setValidationState(valid);
+        const response = checkValidations(form);
 
-        if (valid) {
-            setSubmitted(false);
-        }
+        setValidationState(response);
     }
 
     return (
@@ -112,9 +95,9 @@ function Signup() {
 
                 {submitted && (
                     <p className="mt-5 rounded-lg bg-emerald-50 px-3 py-2 text-center text-sm text-emerald-800">
-                        {validationSuccess
+                        {validation.valid
                             ? `Account created for ${form.name}.`
-                            : 'Validation Failed'}
+                            : validation.message}
                     </p>
                 )}
             </section>
