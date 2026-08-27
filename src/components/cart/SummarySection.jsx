@@ -16,7 +16,12 @@ export default function SummarySection({ subTotalAmount, className }) {
     const totalAmount = subTotalAmount - discountAmount + deliveryFee;
 
     function handleVoucher(voucher) {
-        console.log('Voucher applied', voucher);
+        const validVoucherKeys = validVouchers.map((voucher) => voucher.key);
+        if (validVoucherKeys.includes(voucher)) {
+            console.log('Voucher applied', voucher);
+        }else{
+            alert('Invalid voucher coupon')
+        }
     }
     return (
         <div className={className}>
