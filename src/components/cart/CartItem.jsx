@@ -1,4 +1,4 @@
-import Trashbin from '../icons/Trashbin';
+import { MinusIcon, PlusIcon, TrashIcon } from '../icons/Icons';
 
 export default function CartItem({ item, onQuantityChange, onItemDelete }) {
     const { id, title, image, subtitle, price, quantity } = item;
@@ -37,7 +37,7 @@ export default function CartItem({ item, onQuantityChange, onItemDelete }) {
                                 : 'hover:cursor-pointer hover:scale-105'
                         }`}
                     >
-                        -
+                        <MinusIcon />
                     </button>
 
                     <span className="w-8 text-center">{quantity}</span>
@@ -46,7 +46,7 @@ export default function CartItem({ item, onQuantityChange, onItemDelete }) {
                         onClick={() => onQuantityChange(id, 1)}
                         className="hover:cursor-pointer hover:scale-105"
                     >
-                        +
+                        <PlusIcon />
                     </button>
                 </div>
             </td>
@@ -65,7 +65,7 @@ export default function CartItem({ item, onQuantityChange, onItemDelete }) {
                         }
                     }}
                 >
-                    <Trashbin className="w-5 h-5 text-red-500 hover:scale-110 hover:cursor-pointer" />
+                    <TrashIcon />
                 </button>
             </td>
         </tr>
