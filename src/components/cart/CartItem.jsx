@@ -2,7 +2,6 @@ import { MinusIcon, PlusIcon, TrashIcon } from '../icons/Icons';
 
 export default function CartItem({ item, onQuantityChange, onItemDelete }) {
     const { id, title, image, subtitle, price, quantity } = item;
-    const hasMinQuantity = item.quantity <= 1;
 
     return (
         <tr>
@@ -29,13 +28,8 @@ export default function CartItem({ item, onQuantityChange, onItemDelete }) {
             <td>
                 <div className="inline-flex items-center justify-center gap-5 rounded-full border border-gray-200 px-3 py-1">
                     <button
-                        disabled={hasMinQuantity}
                         onClick={() => onQuantityChange(id, -1)}
-                        className={`${
-                            hasMinQuantity
-                                ? 'disabled:opacity-50'
-                                : 'hover:cursor-pointer hover:scale-105'
-                        }`}
+                        className="hover:cursor-pointer hover:scale-105"
                     >
                         <MinusIcon />
                     </button>
