@@ -13,7 +13,7 @@ export const cartItems = [
         subtitle: 'Set : Colour: Brown',
         price: 472.5,
         quantity: 2,
-        image: 'https://images.unsplash.com/photo-1617325247661-675ab034a77d?auto=format&fit=crop&w=300&q=80',
+        image: 'https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTZ2Hyx12WOTgzprdq9x_Ce8-9oedUTXhGav8RLiXcACQ3KBfIZQiqtTaI5MwfFwi78X3R6loHCvzB5bGHbGFApstAxLhSGM8rwAUvGyBsw8-4_H-rqsao5bg8',
     },
     {
         id: 3,
