@@ -21,7 +21,7 @@ export default function SummaryItem({
                             <button
                                 type="button"
                                 onClick={onVoucherRemove}
-                                className="text-gray-500 hover:text-gray-900 underline"
+                                className="text-gray-500 hover:cursor-pointer hover:text-gray-900 underline"
                             >
                                 Remove
                             </button>
