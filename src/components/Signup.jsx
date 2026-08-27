@@ -1,6 +1,23 @@
 import { useState } from 'react';
 
+// Pass length: min 8, charc, symbol, number
+
 function Signup() {
+    const [form, setFormData] = useState({
+        name: '',
+        email: '',
+        password: '',
+        confirmPassword: '',
+    });
+
+    function updateForm(formKey, value) {
+        const updatedFormData = {
+            ...form,
+            [formKey]: value,
+        };
+        setFormData(updatedFormData);
+    }
+
     return (
         <main className="flex min-h-screen items-center justify-center bg-stone-100 px-6 py-12 text-stone-900">
             <section className="w-full max-w-sm rounded-2xl border border-stone-200 bg-white p-8 shadow-sm">
@@ -31,6 +48,10 @@ function Signup() {
                             placeholder="Alex Morgan"
                             required
                             type="text"
+                            value={form.name}
+                            onChange={(e) => {
+                                updateForm('name', e.target.value);
+                            }}
                         />
                     </div>
 
@@ -48,6 +69,10 @@ function Signup() {
                             placeholder="you@example.com"
                             required
                             type="email"
+                            value={form.email}
+                            onChange={(e) => {
+                                updateForm('email', e.target.value);
+                            }}
                         />
                     </div>
 
@@ -65,6 +90,10 @@ function Signup() {
                             placeholder="Create a password"
                             required
                             type="password"
+                            value={form.password}
+                            onChange={(e) => {
+                                updateForm('password', e.target.value);
+                            }}
                         />
                     </div>
 
@@ -82,6 +111,10 @@ function Signup() {
                             placeholder="Repeat your password"
                             required
                             type="password"
+                            value={form.confirmPassword}
+                            onChange={(e) => {
+                                updateForm('confirmPassword', e.target.value);
+                            }}
                         />
                     </div>
 
