@@ -1,5 +1,9 @@
+import { ProductSearch } from "./components/ProductSearch";
+
 function App() {
-    return <></>;
+    return <>
+        <ProductSearch/>
+    </>;
 }
 
 export default App;
