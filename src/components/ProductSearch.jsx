@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { products } from '../data';
+import { products } from '../datasets/data';
 
 export function ProductSearch() {
     const [query, setQuery] = useState('');
