@@ -6,7 +6,17 @@ export function ProductSearch() {
     const [filteredProducts, setFilteredProducts] = useState(products);
     const inputRef = useRef(null);
 
-    useEffect(() => {}, []);
+    useEffect(() => {
+        const searchQuery = query.trim().toLowerCase();
+
+        const filteredProducts = products.filter((product) =>
+            Object.values(product).some((value) =>
+                String(value).toLowerCase().includes(searchQuery),
+            ),
+        );
+
+        setFilteredProducts(filteredProducts);
+    }, [query]);
 
     function clearSearch() {}
     return (
