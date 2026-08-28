@@ -18,7 +18,10 @@ export function ProductSearch() {
         setFilteredProducts(filteredProducts);
     }, [query]);
 
-    function clearSearch() {}
+    function clearSearch() {
+        setQuery('');
+        inputRef.current.focus();
+    }
     return (
         <main className="min-h-screen bg-stone-100 px-4 py-12 text-stone-900 sm:px-6">
             <section className="mx-auto w-full max-w-xl">
