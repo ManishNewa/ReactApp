@@ -1,5 +1,10 @@
+import { Trello } from './components/trello/page/Trello';
 function App() {
-    return <></>;
+    return (
+        <>
+            <Trello />
+        </>
+    );
 }
 
 export default App;

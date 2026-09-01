@@ -1,0 +1,134 @@
+import { useRef, useState } from 'react';
+import { TaskCard } from '../cards/TaskCard';
+
+export function Board({
+    data,
+    tasks,
+    deleteTask,
+    addTask,
+    updateTaskStatus,
+    DraggedTaskId,
+    DragPreviewElement,
+    DragOffset,
+}) {
+    const [isFormActive, setIsFormActive] = useState(false);
+    const [form, setForm] = useState({
+        title: '',
+        description: '',
+    });
+    const [isDragOver, setIsDragOver] = useState(false);
+
+    const handleSaveTask = (e) => {
+        e.preventDefault();
+        addTask(form.title, form.description, data.value);
+        setForm({
+            title: '',
+            description: '',
+        });
+        setIsFormActive(false);
+    };
+
+    const handleDrop = () => {
+        updateTaskStatus(DraggedTaskId.current, data.value);
+        setIsDragOver(false);
+
+        if (!!DragPreviewElement.current) {
+            DragPreviewElement.current.remove();
+            DragPreviewElement.current = null;
+        }
+    };
+
+    const handleDragOver = (e) => {
+        e.preventDefault();
+        setIsDragOver(true);
+    };
+
+    const handleDragLeave = () => {
+        setIsDragOver(false);
+    };
+
+    return (
+        <div className={`board-column col-${data.value}`}>
+            <div className="board-header">
+                <div className="header-left">
+                    <span className={`dot dot-${data.value}`}></span>
+                    <h2>{data.label}</h2>
+                </div>
+                <button className="more-btn">•••</button>
+            </div>
+
+            <div
+                className={`task-list ${isDragOver ? 'drop-target' : ''}`}
+                onDragOver={handleDragOver}
+                onDragLeave={handleDragLeave}
+                onDrop={handleDrop}
+            >
+                {tasks.length === 0 ? (
+                    <p className="empty-state">No tasks yet.</p>
+                ) : (
+                    <>
+                        {tasks.map((task) => (
+                            <TaskCard
+                                DragOffset={DragOffset}
+                                key={task.id}
+                                DragPreviewElement={DragPreviewElement}
+                                DraggedTaskId={DraggedTaskId}
+                                task={task}
+                                deleteTask={deleteTask}
+                            />
+                        ))}
+                    </>
+                )}
+            </div>
+
+            {!isFormActive ? (
+                <button
+                    className="add-task-btn"
+                    onClick={() => setIsFormActive(true)}
+                >
+                    + Add Task
+                </button>
+            ) : (
+                <form className="inline-task-form" onSubmit={handleSaveTask}>
+                    <input
+                        type="text"
+                        name="title"
+                        value={form.title}
+                        onChange={(e) =>
+                            setForm((prev) => {
+                                return { ...prev, title: e.target.value };
+                            })
+                        }
+                        placeholder="Task title..."
+                        required
+                        autoFocus
+                    />
+                    <textarea
+                        name="description"
+                        rows="2"
+                        value={form.description}
+                        onChange={(e) =>
+                            setForm((prev) => {
+                                return { ...prev, description: e.target.value };
+                            })
+                        }
+                        placeholder="Task description..."
+                        required
+                    ></textarea>
+                    <div className="form-actions">
+                        <button type="submit" className="btn-save">
+                            Save
+                        </button>
+                        <button
+                            type="button"
+                            className="btn-cancel cancel-task-btn"
+                            onClick={() => setIsFormActive(false)}
+                        >
+                            Cancel
+                        </button>
+                    </div>
+                </form>
+            )}
+        </div>
+    );
+}
