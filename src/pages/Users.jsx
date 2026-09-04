@@ -1,7 +1,12 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { users } from '../data.js';
 
 export function Users() {
+    const navigate = useNavigate();
+
+    const goToUserDetails = (userId) => {
+        navigate(`/dashboard/users/${userId}`);
+    };
     return (
         <section className="max-w-20">
             <div className="grid gap-2.5">
@@ -33,6 +38,7 @@ export function Users() {
                         <button
                             className="border-0 bg-transparent font-bold text-[#286059] hover:text-[#193b38] max-[480px]:text-xs"
                             type="button"
+                            onClick={() => goToUserDetails(user.id)}
                         >
                             View profile <span aria-hidden="true">-&gt;</span>
                         </button>
