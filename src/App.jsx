@@ -19,8 +19,8 @@ const routes = [
         element: <About />,
     },
     {
-        path: '/about',
-        element: <About />,
+        path: '/*',
+        element: <NotFound />,
     },
 ];
 
