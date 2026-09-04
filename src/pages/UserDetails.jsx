@@ -7,7 +7,7 @@ export function UserDetails() {
     const user = users.find((item) => item.id === params.userId);
 
     function handleRouting() {
-        navigate('/dashboard');
+        navigate(-1);
     }
 
     if (!user)
