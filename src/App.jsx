@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { DashboardLayout } from './pages/dashboard/DashboardLayout';
-import { Users } from './pages/dashboard/Users';
-import { UserDetails } from './pages/dashboard/UserDetails';
+import { DashboardLayout } from './pages/DashboardLayout';
+import { Users } from './pages/Users';
+import { UserDetails } from './pages/UserDetails';
 import { NotFound } from './pages/NotFound';
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
                 <Route path="/dashboard" element={<DashboardLayout />}>
                     <Route
                         index
-                        element={<h1>This is dashdbaord overview section</h1>}
+                        element={<h1>This is dashboard overview section</h1>}
                     />
                     <Route path="users" element={<Users />} />
                     <Route path="users/:userId" element={<UserDetails />} />
