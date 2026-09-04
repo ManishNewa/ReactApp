@@ -36,7 +36,7 @@ export function Users() {
                             </div>
                         </div>
                         <button
-                            className="border-0 bg-transparent font-bold text-[#286059] hover:text-[#193b38] max-[480px]:text-xs"
+                            className="border-0 bg-transparent font-bold text-[#286059] hover:text-[#193b38] max-[480px]:text-xs hover:cursor-pointer"
                             type="button"
                             onClick={() => goToUserDetails(user.id)}
                         >
