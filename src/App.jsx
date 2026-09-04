@@ -35,8 +35,6 @@ function App() {
                         element={route.element}
                     />
                 ))}
-
-                <Route path="*" element={<NotFound />} />
             </Routes>
         </BrowserRouter>
     );
