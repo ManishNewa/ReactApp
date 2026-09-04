@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export function Home() {
     return (
         <section className="mx-auto max-w-3xl px-6 py-16">
@@ -12,18 +14,18 @@ export function Home() {
                 reloading the page.
             </p>
             <div className="flex flex-wrap gap-3">
-                <a
+                <Link
                     className="rounded-lg bg-indigo-600 px-4 py-2 font-medium text-white hover:bg-indigo-700"
-                    href="/about"
+                    to="/about"
                 >
                     Open the about page
-                </a>
-                <a
+                </Link>
+                <Link
                     className="rounded-lg border border-slate-300 px-4 py-2 font-medium text-slate-700 hover:bg-slate-100"
-                    href="/contact"
+                    to="/contact"
                 >
                     Open the contact page
-                </a>
+                </Link>
             </div>
         </section>
     );
