@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { users } from '../../data';
+import { users } from '../data.js';
 
 export function DashboardHome() {
     const navigate = useNavigate();

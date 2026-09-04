@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { users } from '../../data';
+import { users } from '../data.js';
 
 export function Users() {
     return (
