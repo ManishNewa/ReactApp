@@ -21,6 +21,8 @@ import { DashboardLayout } from './pages/dashboard/DashboardLayout';
 import { Users } from './pages/dashboard/Users';
 import { UserDetails } from './pages/dashboard/UserDetails';
 import { NotFound } from './pages/NotFound';
+import { AcademyPage } from './pages/useContext/AcademyPage';
+import { RandomProvider } from './pages/useContext/randomProvider';
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -28,6 +30,11 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/" element={
+          <RandomProvider>
+            <AcademyPage />
+          </RandomProvider>
+        } />
         <Route
           path="/exercise"
           element={
@@ -36,10 +43,6 @@ function App() {
               <ProductList products={productsSearch} cart={cart} setCart={setCart} />
             </>
           }
-        />
-        <Route
-          path="/"
-          
         />
         <Route path="/dashboard" element={<DashboardLayout />} >
           <Route index element={<h1>This is dashdbaord overview section</h1>} />

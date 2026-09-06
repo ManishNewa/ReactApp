@@ -57,3 +57,6 @@ export const users = [
     description: 'Polishing a dashboard and learning how links change the URL.',
   },
 ];
+
+export const lessonNames = ['React', 'CSS', 'Accessibility', 'Node.js', 'APIs', 'Databases', 'Design', 'Writing', 'Photography'];
+export const colors = ['bg-amber-100', 'bg-sky-100', 'bg-emerald-100', 'bg-rose-100'];
