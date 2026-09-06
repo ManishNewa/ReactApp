@@ -1,9 +1,9 @@
 import { useContext } from 'react';
 import { CartIcon } from '../CartIcon';
-import { CartProvider } from './CartProvider';
+import { CartContext } from './CartProvider';
 
 export function Navbar() {
-    const { cart } = useContext(CartProvider);
+    const { cart } = useContext(CartContext);
 
     return (
         <header className="border-b border-stone-200 bg-white">

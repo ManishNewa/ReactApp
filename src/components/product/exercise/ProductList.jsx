@@ -1,10 +1,10 @@
 import { useContext } from 'react';
 import { ProductCard } from './ProductCard';
 import { productsSearch } from '../../../data';
-import { CartProvider } from './CartProvider';
+import { CartContext } from './CartProvider';
 
 export function ProductList() {
-    const { cart, setCart } = useContext(CartProvider);
+    const { cart, setCart } = useContext(CartContext);
     return (
         <section className="mx-auto max-w-5xl px-6 py-10">
             <div className="mb-6">

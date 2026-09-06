@@ -1,9 +1,9 @@
 import { useContext } from 'react';
 import { AddToCart } from './AddToCart';
-import { CartProvider } from './CartProvider';
+import { CartContext } from './CartProvider';
 
 export function ProductCard({ product }) {
-    const { cart, setCart } = useContext(CartProvider);
+    const { cart, setCart } = useContext(CartContext);
 
     return (
         <article className="flex flex-col justify-between rounded-lg border border-stone-200 bg-white p-5 shadow-sm">
