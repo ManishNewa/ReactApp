@@ -1,4 +1,4 @@
-import { CartIcon } from './CartIcon';
+import { CartIcon } from '../CartIcon';
 
 export function Navbar({ cart }) {
   return (

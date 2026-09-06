@@ -15,8 +15,8 @@
 import { useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { productsSearch } from './data';
-import { Navbar } from './components/product/Navbar';
-import { ProductList } from './components/product/ProductList';
+import { Navbar } from './components/product/exercise/Navbar';
+import { ProductList } from './components/product/exercise/ProductList';
 import { DashboardLayout } from './pages/dashboard/DashboardLayout';
 import { Users } from './pages/dashboard/Users';
 import { UserDetails } from './pages/dashboard/UserDetails';
@@ -29,13 +29,17 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route
-          path="/"
+          path="/exercise"
           element={
             <>
               <Navbar cart={cart} />
               <ProductList products={productsSearch} cart={cart} setCart={setCart} />
             </>
           }
+        />
+        <Route
+          path="/"
+          
         />
         <Route path="/dashboard" element={<DashboardLayout />} >
           <Route index element={<h1>This is dashdbaord overview section</h1>} />
