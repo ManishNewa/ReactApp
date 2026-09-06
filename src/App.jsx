@@ -12,9 +12,7 @@
   This repeated prop passing is called prop drilling. The goal of this
   exercise is to understand this flow before replacing it with useContext.
 */
-import { useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { productsSearch } from './data';
 import { Navbar } from './components/product/exercise/Navbar';
 import { ProductList } from './components/product/exercise/ProductList';
 import { DashboardLayout } from './pages/dashboard/DashboardLayout';
@@ -23,9 +21,8 @@ import { UserDetails } from './pages/dashboard/UserDetails';
 import { NotFound } from './pages/NotFound';
 import { AcademyPage } from './pages/useContext/AcademyPage';
 import { RandomProvider } from './pages/useContext/randomProvider';
-
+import { CartProvider } from './components/product/exercise/CartProvider';
 function App() {
-  const [cart, setCart] = useState([]);
 
   return (
     <BrowserRouter>
@@ -38,10 +35,10 @@ function App() {
         <Route
           path="/exercise"
           element={
-            <>
-              <Navbar cart={cart} />
-              <ProductList products={productsSearch} cart={cart} setCart={setCart} />
-            </>
+            <CartProvider>
+              <Navbar/>
+              <ProductList />
+            </CartProvider>
           }
         />
         <Route path="/dashboard" element={<DashboardLayout />} >
