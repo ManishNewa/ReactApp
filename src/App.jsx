@@ -1,14 +1,42 @@
+/*
+  Exercise: share cart state without useContext
+
+  Follow the data flow step by step:
+  1. App owns the cart state with useState.
+  2. App passes cart to Navbar so CartIcon can display the item count.
+  3. App passes cart and setCart to ProductList.
+  4. ProductList passes cart and setCart to each ProductCard.
+  5. ProductCard passes cart and setCart to AddToCart.
+  6. AddToCart calls setCart when the user clicks the button.
+
+  This repeated prop passing is called prop drilling. The goal of this
+  exercise is to understand this flow before replacing it with useContext.
+*/
+import { useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { productsSearch } from './data';
+import { Navbar } from './components/product/Navbar';
+import { ProductList } from './components/product/ProductList';
 import { DashboardLayout } from './pages/dashboard/DashboardLayout';
 import { Users } from './pages/dashboard/Users';
 import { UserDetails } from './pages/dashboard/UserDetails';
-import { NotFound } from "./pages/NotFound";
-
+import { NotFound } from './pages/NotFound';
 
 function App() {
+  const [cart, setCart] = useState([]);
+
   return (
     <BrowserRouter>
       <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Navbar cart={cart} />
+              <ProductList products={productsSearch} cart={cart} setCart={setCart} />
+            </>
+          }
+        />
         <Route path="/dashboard" element={<DashboardLayout />} >
           <Route index element={<h1>This is dashdbaord overview section</h1>} />
           <Route path="users" element={<Users />} />
