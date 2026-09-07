@@ -8,10 +8,8 @@ export function Movies() {
     const [error, setError] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
 
-    const noMoviesAvailable = () => {
-        return movieQuery.trim() !== '' && movieList.length === 0;
-    };
-
+    const noMoviesAvailable =
+        movieQuery.trim() !== '' && movieList.length === 0;
     useEffect(() => {
         async function FetchSearchMovie() {
             try {
