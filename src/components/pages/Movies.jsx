@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { MovieApi } from '../api';
-import { MovieCard, SkeletonMovieCard } from '../components/movieCard';
+import { MovieAPI } from '../../api';
+import { MovieCard, SkeletonMovieCard } from '../cards/MovieCard';
 
 export function Movies() {
     const [movieList, setMovieList] = useState([]);
@@ -10,7 +10,7 @@ export function Movies() {
         async function FetchSearchMovie() {
             try {
                 setIsLoading(true);
-                const response = await MovieApi.get('/search/movie', {
+                const response = await MovieAPI.get('/search/movie', {
                     params: {
                         query: 'avenger',
                     },
