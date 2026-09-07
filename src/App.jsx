@@ -1,5 +1,10 @@
+import { Movies } from './components/pages/Movies';
 function App() {
-    return <></>;
+    return (
+        <>
+            <Movies />
+        </>
+    );
 }
 
 export default App;
