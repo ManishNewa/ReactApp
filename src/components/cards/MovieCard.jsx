@@ -1,5 +1,5 @@
 export function MovieCard({ movie }) {
-    const posterUrl = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
+    const posterUrl = `${import.meta.env.VITE_POSTER_PATH}${movie.poster_path}`;
     return (
         <div className="relative min-w-[100px] h-[200px] cursor-pointer group rounded-md overflow-hidden flex-shrink-0 snap-start">
             <img
