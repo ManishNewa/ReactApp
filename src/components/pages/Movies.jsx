@@ -16,11 +16,9 @@ export function Movies() {
                         query: movieQuery,
                     },
                 });
-
-                console.log(response.data.results[0]);
                 setMovieList(response.data.results);
             } catch (err) {
-                console.log(err.message);
+                console.log('Something went wrong', err.message);
             } finally {
                 setIsLoading(false);
             }
@@ -49,7 +47,9 @@ export function Movies() {
                             placeholder="Search for a movie"
                             type="search"
                             value={movieQuery}
-                            onChange={(event) => setMovieQuery(event.target.value)}
+                            onChange={(event) =>
+                                setMovieQuery(event.target.value)
+                            }
                         />
                         <button
                             className="rounded-md bg-cyan-400 px-5 py-3 font-semibold text-slate-950 hover:bg-cyan-300"
