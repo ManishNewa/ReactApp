@@ -25,7 +25,7 @@ export function Movies() {
             } catch (err) {
                 setError(err.message);
             } finally {
-                setIsLoading(false);
+                setTimeout(() => setIsLoading(false), 500);
             }
         }
 
