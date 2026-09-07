@@ -5,7 +5,12 @@ import { MovieCard, SkeletonMovieCard } from '../cards/MovieCard';
 export function Movies() {
     const [movieQuery, setMovieQuery] = useState('');
     const [movieList, setMovieList] = useState([]);
+    const [error, setError] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
+
+    const noMoviesAvailable = () => {
+        return movieQuery.trim() !== '' && movieList.length === 0;
+    };
 
     useEffect(() => {
         async function FetchSearchMovie() {
@@ -18,7 +23,7 @@ export function Movies() {
                 });
                 setMovieList(response.data.results);
             } catch (err) {
-                console.log('Something went wrong', err.message);
+                setError(err.message);
             } finally {
                 setIsLoading(false);
             }
@@ -67,7 +72,7 @@ export function Movies() {
                         ))}
                     </div>
                 )}
-                {false && (
+                {error && (
                     <p
                         className="rounded-md border border-red-400/30 bg-red-950/40 p-4 text-red-200"
                         role="alert"
@@ -76,11 +81,11 @@ export function Movies() {
                     </p>
                 )}
 
-                {false && (
+                {noMoviesAvailable && (
                     <p className="text-slate-300">No movies were found.</p>
                 )}
 
-                {!isLoading && (
+                {!isLoading && movieList?.length > 0 && (
                     <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 lg:grid-cols-6">
                         {movieList.map((movie) => (
                             <MovieCard key={movie.id} movie={movie} />
