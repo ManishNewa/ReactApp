@@ -9,7 +9,7 @@ export function Movies() {
     const [isLoading, setIsLoading] = useState(false);
 
     const noMoviesAvailable =
-        movieQuery.trim() !== '' && movieList.length === 0 && !isLoading;
+        movieQuery.trim() !== '' && movieList.length === 0;
     useEffect(() => {
         async function FetchSearchMovie() {
             try {
@@ -83,7 +83,7 @@ export function Movies() {
                     <p className="text-slate-300">No movies were found.</p>
                 )}
 
-                {!noMoviesAvailable && (
+                {!isLoading && movieList.length > 0 && (
                     <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 lg:grid-cols-6">
                         {movieList.map((movie) => (
                             <MovieCard key={movie.id} movie={movie} />
