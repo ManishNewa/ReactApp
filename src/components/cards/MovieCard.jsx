@@ -1,7 +1,7 @@
 export function MovieCard({ movie }) {
     const posterUrl = `${import.meta.env.VITE_POSTER_PATH}${movie.poster_path}`;
     return (
-        <div className="relative min-w-[100px] h-[200px] cursor-pointer group rounded-md overflow-hidden flex-shrink-0 snap-start">
+        <div className="relative min-w-25 h-50 cursor-pointer group rounded-md overflow-hidden shrink-0 snap-start">
             <img
                 src={posterUrl}
                 alt={movie.title}
@@ -9,7 +9,7 @@ export function MovieCard({ movie }) {
                 loading="lazy"
             />
             {/* Optional Gradient Overlay on Hover for Text */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/0 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+            <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/0 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                 <h3 className="text-white text-sm font-semibold truncate w-full">
                     {movie.title}
                 </h3>
@@ -22,7 +22,7 @@ export function MovieCard({ movie }) {
 
 export function SkeletonMovieCard() {
     return (
-        <div className="relative min-w-[100px] h-[200px] rounded-md overflow-hidden flex-shrink-0 snap-start bg-gray-800 animate-pulse">
+        <div className="relative min-w-25 h-50 rounded-md overflow-hidden shrink-0 snap-start bg-gray-800 animate-pulse">
             {/* Poster skeleton */}
             <div className="w-full h-full bg-gray-700" />
 
