@@ -3,6 +3,7 @@ import { MovieAPI } from '../../api';
 import { MovieCard, SkeletonMovieCard } from '../cards/MovieCard';
 
 export function Movies() {
+    const [movieQuery, setMovieQuery] = useState('');
     const [movieList, setMovieList] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
 
@@ -12,7 +13,7 @@ export function Movies() {
                 setIsLoading(true);
                 const response = await MovieAPI.get('/search/movie', {
                     params: {
-                        query: 'avenger',
+                        query: movieQuery,
                     },
                 });
 
@@ -26,7 +27,7 @@ export function Movies() {
         }
 
         FetchSearchMovie();
-    }, []);
+    }, [movieQuery]);
 
     return (
         <main className="min-h-screen bg-slate-950 px-6 py-10 text-white sm:px-10">
@@ -47,6 +48,8 @@ export function Movies() {
                             id="movie-query"
                             placeholder="Search for a movie"
                             type="search"
+                            value={movieQuery}
+                            onChange={(event) => setMovieQuery(event.target.value)}
                         />
                         <button
                             className="rounded-md bg-cyan-400 px-5 py-3 font-semibold text-slate-950 hover:bg-cyan-300"
