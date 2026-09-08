@@ -10,7 +10,7 @@ export function Movies() {
     const [error, setError] = useState(null);
 
     const noMoviesAvailable =
-        isSubmitted && movieQuery.trim() !== '' && movieList.length === 0;
+        !isSubmitted && movieQuery.trim() !== '' && movieList.length === 0;
 
     useEffect(() => {
         async function FetchSearchMovie() {
