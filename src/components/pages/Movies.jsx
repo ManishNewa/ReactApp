@@ -10,10 +10,11 @@ export function Movies() {
 
     const noMoviesAvailable =
         movieQuery.trim() !== '' && movieList.length === 0;
-        
+
     useEffect(() => {
         async function FetchSearchMovie() {
             try {
+                setError(null);
                 setIsLoading(true);
                 const response = await MovieAPI.get('/search/movie', {
                     params: {
