@@ -5,11 +5,12 @@ import { MovieCard, SkeletonMovieCard } from '../cards/MovieCard';
 export function Movies() {
     const [movieQuery, setMovieQuery] = useState('');
     const [movieList, setMovieList] = useState([]);
-    const [error, setError] = useState(null);
+    const [isSubmitted, setIsSubmitted] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
+    const [error, setError] = useState(null);
 
     const noMoviesAvailable =
-        movieQuery.trim() !== '' && movieList.length === 0;
+        isSubmitted && movieQuery.trim() !== '' && movieList.length === 0;
 
     useEffect(() => {
         async function FetchSearchMovie() {
@@ -26,11 +27,21 @@ export function Movies() {
                 setError(err.message);
             } finally {
                 setTimeout(() => setIsLoading(false), 500);
+                setIsSubmitted(false);
             }
         }
 
+        if (isSubmitted) {
+            FetchSearchMovie();
+        }
+
         FetchSearchMovie();
-    }, [movieQuery]);
+    }, [isSubmitted]);
+
+    function handleSubmit(event) {
+        event.preventDefault();
+        setIsSubmitted(true);
+    }
 
     return (
         <main className="min-h-screen bg-slate-950 px-6 py-10 text-white sm:px-10">
@@ -42,7 +53,10 @@ export function Movies() {
                     <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
                         Movie search
                     </h1>
-                    <form className="mt-6 flex max-w-xl gap-3">
+                    <form
+                        onSubmit={(event) => handleSubmit(event)}
+                        className="mt-6 flex max-w-xl gap-3"
+                    >
                         <label className="sr-only" htmlFor="movie-query">
                             Search for a movie
                         </label>
