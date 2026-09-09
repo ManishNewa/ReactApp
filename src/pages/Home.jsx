@@ -27,7 +27,7 @@ export function Home() {
     return (
         <div className="h-full overflow-hidden">
             <Hero movie={trendingMovies[0]} isLoading={isLoading} />
-            <Trending movies={trendingMovies} />
+            <Trending movies={trendingMovies.slice(1)} />
         </div>
     );
 }
