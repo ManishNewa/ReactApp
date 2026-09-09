@@ -1,4 +1,5 @@
-export function Trending() {
+import { MovieCard } from './cards/MovieCard';
+export function Trending({ movies }) {
     return (
         <div className="py-6 px-12 relative">
             <h2 className="text-white text-xl font-bold mb-4 tracking-wider uppercase">
@@ -23,9 +24,9 @@ export function Trending() {
                 </button>
 
                 <div className="flex space-x-4 border border-white h-20 overflow-x-auto scrollbar-hide snap-x scroll-smooth pb-4">
-                    {/* {movies.map((movie) => (
+                    {movies.map((movie) => (
                         <MovieCard key={movie.id} movie={movie} />
-                    ))} */}
+                    ))}
                 </div>
 
                 <button className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/80 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity hidden md:block -mr-4">
