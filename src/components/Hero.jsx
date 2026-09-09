@@ -1,5 +1,10 @@
+import { TrendingSkeleton } from './skeletons/TrendingSkeleton';
+
 export function Hero({ movie, isLoading }) {
-    if (!movie) return <>No Movie</>;
+    if (isLoading) {
+        return <TrendingSkeleton />;
+    }
+
     const posterUrl = `${import.meta.env.VITE_POSTER_PATH}${movie.poster_path}`;
     return (
         <div className="relative h-[77vh] w-full  bg-black flex items-center overflow-hidden">
