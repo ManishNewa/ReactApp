@@ -15,7 +15,9 @@ export function Home() {
             } catch (err) {
                 console.log('error::', err.message);
             } finally {
-                setIsLoading(true);
+                setTimeout(() => {
+                    setIsLoading(false);
+                }, 500);
             }
         }
 
