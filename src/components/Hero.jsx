@@ -1,12 +1,12 @@
-export function Hero() {
+export function Hero({ movie, isLoading }) {
+    if (!movie) return <>No Movie</>;
+    const posterUrl = `${import.meta.env.VITE_POSTER_PATH}${movie.poster_path}`;
     return (
         <div className="relative h-[77vh] w-full  bg-black flex items-center overflow-hidden">
             {/* Background Image */}
             <div className=" w-full inset-0">
                 <img
-                    src={
-                        'https://occ-0-2794-2218.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABaQuWMREKSXwTSiOqfUu0CziFXajGu9ItZpeIqSe7nzlDcELLq4PjDvoRmIzdd2i_NDidqbx-V1waWRUcPXiH90wHMWQyQquSFpd.jpg?r=dff'
-                    }
+                    src={posterUrl}
                     className="w-full h-full object-cover opacity-80"
                 />
                 {/* Gradients to blend with background and text */}
@@ -17,13 +17,15 @@ export function Hero() {
             {/* Content */}
             <div className="absolute z-10 px-12 max-w-2xl">
                 <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 leading-tight uppercase">
-                    movie title
+                    {movie.title}
                 </h1>
 
                 <div className="flex items-center space-x-4 mb-8 text-sm font-medium">
                     <span className="text-gray-300">A Original Film</span>
-                    <span className="text-green-500 font-bold">98% Match</span>
-                    <span className="text-gray-300">28 sept</span>
+                    <span className="text-green-500 font-bold">
+                        {Math.round(movie.vote_average)}% Match
+                    </span>
+                    <span className="text-gray-300">{movie.release_date}</span>
                 </div>
 
                 <div className="flex items-center space-x-4">
