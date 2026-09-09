@@ -5,11 +5,19 @@ import { movieAPI } from '../api';
 
 export function Home() {
     const [trendingMovies, setTrendingMovies] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
         async function fetchTrendingMovies() {
-            const response = await movieAPI.get('/trending/movie/week');
-            setTrendingMovies(response.data.results);
+            try {
+                setIsLoading(true);
+                const response = await movieAPI.get('/trending/movie/week');
+                setTrendingMovies(response.data.results);
+            } catch (err) {
+                console.log('error::', err.message);
+            } finally {
+                setIsLoading(true);
+            }
         }
 
         fetchTrendingMovies();
