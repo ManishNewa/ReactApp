@@ -90,7 +90,8 @@ export function NavBar() {
                         </svg>
                         <button
                             type="button"
-                            className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white"
+                            onClick={()=> setQuery('')}
+                            className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white hover:cursor-pointer"
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
