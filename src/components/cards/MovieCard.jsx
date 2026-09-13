@@ -22,7 +22,7 @@ export function MovieCard({ movie }) {
                 </h3>
             </div>
             {/* Border effect like in the design (white border on hover or active) */}
-            <div className="absolute inset-0 border-2 border-transparent group-hover:border-gray-300 rounded-md transition-colors duration-300 pointer-events-none"></div>
+            <div className="absolute inset-0 border-2 border-transparent rounded-md transition-colors duration-300 pointer-events-none"></div>
         </div>
     );
 }
