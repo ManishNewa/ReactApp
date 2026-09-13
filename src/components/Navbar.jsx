@@ -1,6 +1,31 @@
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { movieAPI } from '../api';
 
 export function NavBar() {
+    const [query, setQuery] = useState('');
+    const [suggestions, setSuggestions] = useState([]);
+
+    useEffect(() => {
+        async function fetchSuggestion() {
+            try {
+                setSuggestions([]);
+                const response = await movieAPI.get('/search/movie', {
+                    params: {
+                        query: query,
+                    },
+                });
+
+                setSuggestions(response.data.results.slice(0, 5));
+                console.log(suggestions);
+            } catch (err) {
+                console.log('Error::', err.message);
+            }
+        }
+
+        fetchSuggestion();
+    }, [query]);
+
     return (
         <div className="fixed top-0 right-0 w-full flex justify-between p-4 z-99">
             <div className="flex items-center space-x-8">
@@ -43,6 +68,8 @@ export function NavBar() {
                         <input
                             type="text"
                             placeholder="Search movies..."
+                            value={query}
+                            onChange={(e) => setQuery(e.target.value)}
                             autoFocus
                             className="bg-black/50 border border-gray-600 text-white rounded-full py-2 px-4 pl-10 focus:outline-none focus:border-gray-700 transition-colors w-64"
                         />
@@ -81,6 +108,26 @@ export function NavBar() {
                             </svg>
                         </button>
                     </form>
+                    <div className="absolute top-full w-full mt-2 bg-[#141414] border border-gray-700 rounded-md shadow-xl overflow-hidden z-50 h-100">
+                        {suggestions.map((movie) => (
+                            <div
+                                key={movie}
+                                className="px-4 py-3 hover:bg-gray-800 cursor-pointer text-sm text-gray-200 transition-colors flex items-center space-x-3"
+                            >
+                                <div className="w-8 h-12 bg-gray-700 shrink-0">
+                                    <img
+                                        src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
+                                        alt={movie.title}
+                                        className="w-full h-full object-cover"
+                                    />
+                                </div>
+
+                                <span className="truncate">
+                                    {movie.title}
+                                </span>
+                            </div>
+                        ))}
+                    </div>
                 </div>
 
                 <button className="w-8 h-8 rounded-full overflow-hidden border border-gray-500">
