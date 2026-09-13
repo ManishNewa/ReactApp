@@ -105,7 +105,7 @@ export function MovieDetails() {
                         </div>
 
                         <button
-                            onClick={() => navigate(`/movie/play/${movieId}`)}
+                            onClick={() => navigate(`/movie/${movieId}/play`)}
                             className="flex items-center justify-center gap-3 bg-linear-to-r from-[#a855f7] to-[#8b5cf6] hover:from-[#9333ea] hover:cursor-pointer hover:to-[#7c3aed] text-white font-bold py-4 px-12 rounded-full transition-all duration-300 transform hover:scale-105 shadow-[0_0_20px_rgba(168,85,247,0.4)] hover:shadow-[0_0_30px_rgba(168,85,247,0.6)]"
                         >
                             <svg
