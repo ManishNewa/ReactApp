@@ -88,47 +88,51 @@ export function NavBar() {
                             <circle cx="11" cy="11" r="8"></circle>
                             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                         </svg>
-                        <button
-                            type="button"
-                            onClick={()=> setQuery('')}
-                            className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white hover:cursor-pointer"
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="16"
-                                height="16"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth="2"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
+                        {query.length > 0 && (
+                            <button
+                                type="button"
+                                onClick={() => setQuery('')}
+                                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white hover:cursor-pointer"
                             >
-                                <line x1="18" y1="6" x2="6" y2="18"></line>
-                                <line x1="6" y1="6" x2="18" y2="18"></line>
-                            </svg>
-                        </button>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="16"
+                                    height="16"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth="2"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                >
+                                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                                </svg>
+                            </button>
+                        )}
                     </form>
-                    <div className="absolute top-full w-full mt-2 bg-[#141414] border border-gray-700 rounded-md shadow-xl overflow-hidden z-50 h-100">
-                        {suggestions.map((movie) => (
-                            <div
-                                key={movie}
-                                className="px-4 py-3 hover:bg-gray-800 cursor-pointer text-sm text-gray-200 transition-colors flex items-center space-x-3"
-                            >
-                                <div className="w-8 h-12 bg-gray-700 shrink-0">
-                                    <img
-                                        src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
-                                        alt={movie.title}
-                                        className="w-full h-full object-cover"
-                                    />
-                                </div>
+                    {suggestions.length > 0 && (
+                        <div className="absolute top-full w-full mt-2 bg-[#141414] border border-gray-700 rounded-md shadow-xl overflow-hidden z-50 h-fit">
+                            {suggestions.map((movie) => (
+                                <div
+                                    key={movie}
+                                    className="px-4 py-3 hover:bg-gray-800 cursor-pointer text-sm text-gray-200 transition-colors flex items-center space-x-3"
+                                >
+                                    <div className="w-8 h-12 bg-gray-700 shrink-0">
+                                        <img
+                                            src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
+                                            alt={movie.title}
+                                            className="w-full h-full object-cover"
+                                        />
+                                    </div>
 
-                                <span className="truncate">
-                                    {movie.title}
-                                </span>
-                            </div>
-                        ))}
-                    </div>
+                                    <span className="truncate">
+                                        {movie.title}
+                                    </span>
+                                </div>
+                            ))}
+                        </div>
+                    )}
                 </div>
 
                 <button className="w-8 h-8 rounded-full overflow-hidden border border-gray-500">
