@@ -13,7 +13,6 @@ export function MovieDetails() {
             try {
                 const response = await movieAPI.get(`/movie/${movieId}`);
                 setMovie(response.data);
-                console.log(response.data);
             } catch (err) {
                 console.log(err.message);
             } finally {
@@ -40,8 +39,8 @@ export function MovieDetails() {
                         alt={movie.title}
                         className="w-full h-full object-cover opacity-30 blur-sm"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#030712]/20 to-[#030712]"></div>
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#030712] via-[#030712]/20 to-transparent"></div>
+                    <div className="absolute inset-0 bg-linear-to-b from-transparent via-[#030712]/20 to-[#030712]"></div>
+                    <div className="absolute inset-0 bg-linear-to-r from-[#030712] via-[#030712]/20 to-transparent"></div>
                 </div>
 
                 <div className="relative   z-10 container mx-auto px-6 py-24 h-fit   flex flex-col md:flex-row gap-12 items-center md:items-start">
