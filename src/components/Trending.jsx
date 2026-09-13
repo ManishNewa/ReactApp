@@ -1,13 +1,29 @@
+import { useRef } from 'react';
 import { MovieCard, SkeletonMovieCard } from './cards/MovieCard';
+
 export function Trending({ movies, isLoading }) {
+    const ScrollContainerRef = useRef(null);
+
+    function Scroll(direction) {
+        const { clientWidth, scrollLeft } = ScrollContainerRef.current;
+        const scrollOffset =
+            direction === 'left'
+                ? scrollLeft - clientWidth
+                : scrollLeft + clientWidth;
+        ScrollContainerRef.current.scrollTo({ left: scrollOffset });
+    }
+
     return (
         <div className="py-6 px-12 relative">
             <h2 className="text-white text-xl font-bold mb-4 tracking-wider uppercase">
-                Title
+                TRENDING NOW
             </h2>
 
             <div className="group relative">
-                <button className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/80 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity hidden md:block -ml-4">
+                <button
+                    onClick={() => Scroll('left')}
+                    className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:cursor-pointer hover:bg-black/80 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity hidden md:block -ml-4"
+                >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
@@ -23,9 +39,12 @@ export function Trending({ movies, isLoading }) {
                     </svg>
                 </button>
 
-                <div className="flex space-x-4 border border-white h-20 overflow-x-auto scrollbar-hide snap-x scroll-smooth pb-4">
+                <div
+                    ref={ScrollContainerRef}
+                    className="flex space-x-4  overflow-x-auto scrollbar-hide snap-x scroll-smooth pb-4"
+                >
                     {isLoading
-                        ? Array.from({ length: 10 }, (_, index) => (
+                        ? Array.from({ length: 14 }, (_, index) => (
                               <SkeletonMovieCard key={index} />
                           ))
                         : movies.map((movie) => (
@@ -33,7 +52,10 @@ export function Trending({ movies, isLoading }) {
                           ))}
                 </div>
 
-                <button className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/80 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity hidden md:block -mr-4">
+                <button
+                    onClick={() => Scroll('right')}
+                    className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:cursor-pointer hover:bg-black/80 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity hidden md:block -mr-4"
+                >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
