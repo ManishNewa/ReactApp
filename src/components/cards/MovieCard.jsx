@@ -1,7 +1,14 @@
+import { useNavigate } from 'react-router-dom';
+
 export function MovieCard({ movie }) {
+    const navigate = useNavigate();
     const posterUrl = `${import.meta.env.VITE_POSTER_PATH}${movie.poster_path}`;
+
     return (
-        <div className="relative min-w-25 h-50 cursor-pointer group rounded-md overflow-hidden shrink-0 snap-start">
+        <div
+            onClick={() => navigate(`/movie/${movie.id}`)}
+            className="relative min-w-25 h-50 cursor-pointer group rounded-md overflow-hidden shrink-0 snap-start"
+        >
             <img
                 src={posterUrl}
                 alt={movie.title}
