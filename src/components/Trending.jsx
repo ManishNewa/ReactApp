@@ -41,7 +41,7 @@ export function Trending({ movies, isLoading }) {
 
                 <div
                     ref={ScrollContainerRef}
-                    className="flex space-x-4  overflow-x-auto scrollbar-hide snap-x scroll-smooth pb-4"
+                    className="flex space-x-4 overflow-x-auto scrollbar-hide snap-x scroll-smooth pb-4"
                 >
                     {isLoading
                         ? Array.from({ length: 14 }, (_, index) => (
