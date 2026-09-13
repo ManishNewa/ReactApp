@@ -36,7 +36,7 @@ export function Hero({ movie, isLoading }) {
 
                     <div className="flex items-center space-x-4">
                         <button
-                            onClick={() => navigate(`/movie/play/${movie.id}`)}
+                            onClick={() => navigate(`/movie/${movie.id}/play`)}
                             className="flex items-center justify-center bg-[#a855f7] hover:cursor-pointer hover:bg-[#9333ea] text-white font-bold py-3 px-10 rounded-full transition-colors"
                         >
                             PLAY
