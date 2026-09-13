@@ -106,8 +106,8 @@ export function MovieDetails() {
                         </div>
 
                         <button
-                            onClick={() => navigate(`/movie/play/${id}`)}
-                            className="flex items-center justify-center gap-3 bg-gradient-to-r from-[#a855f7] to-[#8b5cf6] hover:from-[#9333ea] hover:to-[#7c3aed] text-white font-bold py-4 px-12 rounded-full transition-all duration-300 transform hover:scale-105 shadow-[0_0_20px_rgba(168,85,247,0.4)] hover:shadow-[0_0_30px_rgba(168,85,247,0.6)]"
+                            onClick={() => navigate(`/movie/play/${movieId}`)}
+                            className="flex items-center justify-center gap-3 bg-linear-to-r from-[#a855f7] to-[#8b5cf6] hover:from-[#9333ea] hover:to-[#7c3aed] text-white font-bold py-4 px-12 rounded-full transition-all duration-300 transform hover:scale-105 shadow-[0_0_20px_rgba(168,85,247,0.4)] hover:shadow-[0_0_30px_rgba(168,85,247,0.6)]"
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -165,7 +165,7 @@ function Skeleton() {
                         <p className="text-gray-300 leading-relaxed text-lg max-w-3xl"></p>
                     </div>
 
-                    <button className="flex items-center h-8 w-16 justify-center gap-3 bg-gradient-to-r from-[#a855f7] to-[#8b5cf6] hover:from-[#9333ea] hover:to-[#7c3aed] text-white font-bold py-4 px-12 rounded-full transition-all duration-300 transform hover:scale-105 shadow-[0_0_20px_rgba(168,85,247,0.4)] hover:shadow-[0_0_30px_rgba(168,85,247,0.6)]"></button>
+                    <button className="flex items-center h-8 w-16 justify-center gap-3 bg-linear-to-r from-[#a855f7] to-[#8b5cf6] hover:from-[#9333ea] hover:to-[#7c3aed] text-white font-bold py-4 px-12 rounded-full transition-all duration-300 transform hover:scale-105 shadow-[0_0_20px_rgba(168,85,247,0.4)] hover:shadow-[0_0_30px_rgba(168,85,247,0.6)]"></button>
                 </div>
             </div>
         </div>
